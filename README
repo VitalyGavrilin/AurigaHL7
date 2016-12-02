@@ -7,7 +7,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 DESCRIPTION:
-This document descibes the HL7 C++ library (HCPPL) which implements HL7
+This document descibes the HL7 C++ library (AurigaHL7) which implements HL7
 structures of the version 2.4 (see www.hl7.org). The library uses C++ 0x
 standards; the compiller should support them to use this library. The howto
 section is placed in the end of this document. The library provides
