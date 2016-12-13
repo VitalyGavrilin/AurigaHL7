@@ -35,3 +35,5 @@ The source code of the library has the following structures:
 
 The source code is provided as an Eclipse and MS VS projects which inclde these
 directories. The projects run test applications.
+
+Please see HOWTO file for build inctructions and example usage.
