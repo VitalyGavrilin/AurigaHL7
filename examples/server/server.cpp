@@ -15,12 +15,17 @@
  * along with Auriga HL7 library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// server.cpp : Defines the entry point for the console application.
-//
+// Example of HL7 server wich receives QRY request, validates it and sends ADR answer.
 
 #include "hl7mllp.h" // place hl7mllp.h file as first include in the source file
 #include "hl7socket.h"
+
+#ifdef WIN32
 #include <Windows.h>
+#else // WIN32
+#include <time.h>
+#endif // WIN32
+
 #include <string>
 #include <sys/timeb.h>
 #include "util.h"
@@ -31,15 +36,27 @@
 #include "dataencode.h"
 #include "validation.h"
 
-// encde string time stamp in TS format from SYSTEMTIME and timezone
+#ifdef WIN32
+// encode string time stamp in TS format from SYSTEMTIME and timezone
 std::string encodeTimeStamp( SYSTEMTIME& st, short zone )
+#else // WIN32
+// encode string time stamp in TS format from struct tm and timezone
+std::string encodeTimeStamp( timeb& st )
+#endif // WIN32
 {
      std::string encoded_val;
      try
      {
+#ifdef WIN32
           // use dataencode functtion for TS data encoding
           if ( !encodeTS( encoded_val, st.wYear, st.wMonth, st.wDay,
                st.wHour, st.wMinute, st.wSecond, st.wMilliseconds, zone ) )
+#else // WIN32
+          struct tm* tmTime = localtime( &st.time );
+          // use dataencode functtion for TS data encoding
+          if ( !encodeTS( encoded_val, tmTime->tm_year, tmTime->tm_mon, tmTime->tm_mday,
+               tmTime->tm_hour, tmTime->tm_min, tmTime->tm_sec, st.millitm, st.timezone ) )
+#endif // WIN32
           {
                encoded_val = "000000000000";
           }
@@ -55,11 +72,19 @@ std::string encodeTimeStamp( SYSTEMTIME& st, short zone )
 int main( int argc, char* argv[] )
 {
      std::string data;
+#ifdef WIN32
      __timeb64 tm;
      SYSTEMTIME time;
+#else // WIN32
+     timeb tm;
+#endif // WIN32
 
+#ifdef WIN32
      _ftime64( &tm );
      GetSystemTime( &time );
+#else // WIN32
+     ftime( &tm );
+#endif // WIN32
 
      // create socket server
      HL7SocketServer serv( 7711 );
@@ -162,7 +187,11 @@ int main( int argc, char* argv[] )
           adr.getMSH_1()->getMessageType()->getMessageType()->setData( "ADR" );
           adr.getMSH_1()->getMessageType()->getTriggerEvent()->setData( "A19" );
           adr.getMSH_1()->getMessageType()->getMessageStructure()->setData( "ADR_A19" );
+#ifdef WIN32
           std::string curTime = encodeTimeStamp( time, tm.timezone );
+#else // WIN32
+          std::string curTime = encodeTimeStamp( tm );
+#endif // WIN32
           adr.getMSH_1()->getDateTimeOfMessage()->getTimeOfAnEvent()->setData( curTime );
           adr.getMSH_1()->getMessageControlID()->setData( "token__110023" );
 

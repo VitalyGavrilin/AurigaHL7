@@ -45,7 +45,6 @@
      HL7_24::TS ts_test; \
      HL7_24::ST test_obj; \
      test_obj = *ts_test.getTS_1();
-     //HL7_24::ST test_obj = *ts_test.getTS_1();
 
 #define TEST_END( name ) \
           if ( !bOk ) \
@@ -828,7 +827,7 @@ int main()
           TEST_ISFLOAT_ERROR( "" ); // error - empty string
      TEST_END( "isFloat" );
      TEST_START_SIMPLE // int64 parsing function
-          __int64 dt64;
+          int64_t dt64;
           TEST_PARSEINT64_OK( 897245029875 ); // correct int64 positive number
           TEST_PARSEINT64_OK( -897245029875 ); // correct int64 negative number
           // error - overflow

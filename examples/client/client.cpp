@@ -15,12 +15,17 @@
  * along with Auriga HL7 library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// client.cpp : Defines the entry point for the console application.
-//
+// Example of HL7 client wich sends QRY request and receives ADR answer.
 
 #include "hl7mllp.h" // place hl7mllp.h file as first include in the source file
 #include <stdio.h>
+
+#ifdef WIN32
 #include <Windows.h>
+#else // WIN32
+#include <time.h>
+#endif // WIN32
+
 #include <string>
 #include <sys/timeb.h>
 #include "message/QRY_A19.h"
@@ -29,15 +34,27 @@
 #include "dataencode.h"
 #include "ObjToPipe.h"
 
-// encde string time stamp in TS format from SYSTEMTIME and timezone
+#ifdef WIN32
+// encode string time stamp in TS format from SYSTEMTIME and timezone
 std::string encodeTimeStamp( SYSTEMTIME& st, short zone )
+#else // WIN32
+// encode string time stamp in TS format from struct tm and timezone
+std::string encodeTimeStamp( timeb& st )
+#endif // WIN32
 {
      std::string encoded_val;
      try
      {
+#ifdef WIN32
           // use dataencode functtion for TS data encoding
           if ( !encodeTS( encoded_val, st.wYear, st.wMonth, st.wDay,
                st.wHour, st.wMinute, st.wSecond, st.wMilliseconds, zone ) )
+#else // WIN32
+          struct tm* tmTime = localtime ( &st.time );
+          // use dataencode functtion for TS data encoding
+          if ( !encodeTS( encoded_val, tmTime->tm_year, tmTime->tm_mon, tmTime->tm_mday,
+               tmTime->tm_hour, tmTime->tm_min, tmTime->tm_sec, st.millitm, st.timezone ) )
+#endif // WIN32
           {
                encoded_val = "000000000000";
           }
@@ -55,13 +72,21 @@ int main(int argc, char* argv[])
      // create QRY_A19 message
      HL7_24::QRY_A19 qry; // request PID message
      HL7_24::ADR_A19 adr; // answer message
+#ifdef WIN32
      __timeb64 tm;
      SYSTEMTIME time;
+#else // WIN32
+     timeb tm;
+#endif // WIN32
      std::string data;
      std::string result;
 
+#ifdef WIN32
      _ftime64( &tm );
      GetSystemTime( &time );
+#else // WIN32
+     ftime( &tm );
+#endif // WIN32
 
      try
      {
@@ -78,7 +103,11 @@ int main(int argc, char* argv[])
           qry.getMSH_1()->getCountryCode()->setData( "RUS" );
           qry.getMSH_1()->getCharacterSet()->setData( "ASCII" );
           qry.getMSH_1()->getVersionID()->getVID_1()->setData( "2.4" );
+#ifdef WIN32
           std::string curTime = encodeTimeStamp( time, tm.timezone );
+#else // WIN32
+          std::string curTime = encodeTimeStamp( tm );
+#endif // WIN32
           qry.getMSH_1()->getDateTimeOfMessage()->getTimeOfAnEvent()->setData( curTime );
           qry.getMSH_1()->getMessageControlID()->setData( "token__110022" );
 

@@ -15,6 +15,8 @@ provides implementation of the following features:
 - HL7 Structures of the version 2.x (2.4 by default)
 - Conversion the HL7 stuctures to the HL7 string (pipe).
 - Conversion a pipe string into HL7 structure.
+- Encoding / decoding / validating HL7 types
+- MLLP HL7 protocol support
 
 The source code of the library has the following structures:
 
@@ -22,18 +24,144 @@ The source code of the library has the following structures:
     |-- 2.4
     |   |-- datatype
     |   |-- message
-    |   `-- segment
+    |   |-- segment
+    |   `-- WIN
     |-- common
     |-- test
+    |-- examples
     `-- thirdparty
 
 - src - this is the top directory.
 - 2.4 - this directory contains descriptio of the HL7 structures of the 2.4 version.
+- datatype - HL7 data types
+- mesage - HL7 messages
+- segment - HL7 segments
+- 2.4 / WIN - static library project for Windows
 - common - it contains common code: base classes and utils that are not used thirdparty code base.
 - test - source code of the tests.
+	tests - tests for core objects
+	socket_test - tests for HL7Socket, HL7SocketServer and HL7MLLP objects
+	verify_test - tests for HL7 data verification functions
+	WIN - tests compilation solution for Windows
+- examples - source code of the examples
+	hello - core functions example
+	client - HL7MLLP client example with validation and encoding
+	server - HL7SocketServer example with validation and encoding
+	WIN - examples compilation solution for Windows
 - thirdparty - thirdparty code.
 
-The source code is provided as an Eclipse and MS VS projects which inclde these
+The source code is provided as an Eclipse and MS VS 2013 projects which inclde these
 directories. The projects run test applications.
 
+<<<<<<< HEAD
+COMPILATION Windows:
+To compile examples, you can use solution file in examples/WIN directory.
+To compile tests, you can use solution file in tests/WIN directory.
+To compile SDK library, add static library project from 2.4/WIN directory to your solution.
+If you use HL7MLLP object, you should place include hl7mllp.h header first.
+
+HOWTO:
+The following examle shows how to use the library.
+
+<EXAMPLE START>
+
+// The example uses the ORU_R01 message.
+#include "2.4/message/ORU_R01.h"
+
+// Any object of the hl7 library can be serialized.
+// This header file includes the necessary functionality.
+#include "common/ObjToPipe.h"    
+
+// For std::cout and std::endl
+#include <iostream> 
+
+int main() {
+
+	// The library is placed in the HL7_24 namespace.
+	HL7_24::ORU_R01 msg;
+
+	// Get information about object
+	// The output will be :
+	// > ORU_R01
+	std::cout << msg.className() << std::endl;
+
+	// By defauld the message structure has no information:
+	// The output will be :
+	// > 0
+	std::cout << msg.getMSH_1() << std::endl;
+
+	// Using a getter method try to find its name:
+	// The output will be :
+	// > MSH
+	HL7_24::MSH p_msh_1 = msg.getMSH_1();
+	std::cout <<p_msh_1->className() << std::endl;
+
+	// The MSH structure is a segment structure that has sub-structures.
+	// The output will be :
+	// > 1
+	std::cout << p_msh_1->isSegment() << std::endl;
+
+	// A segment structure can have any data only another structures:
+	// The output will be :
+	// > HL7Object::setData: Invalid object type.
+	try {
+		p_msh_1->setData("Set data");
+	} catch (HL7Exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	// The first element of the MSH structure is ST datalement: 
+	// The output will be :
+	// > ST
+	std::cout << p_msh_1->getObjectSafe(0, 0)->className() << std::endl;
+
+	// It is a datalement: 
+	// The output will be :
+	// > ST
+	// > 1
+	std::cout << p_msh_1->getMSH_1()->className() << std::endl;
+	std::cout << p_msh_1->getMSH_1()->isDataElement() << std::endl;
+
+	// A dataelement may store an information string:
+	// The output will be :
+	// > This is data.
+	p_msh_1->getMSH_1()->setData("This is data.");
+	std::cout << p_msh_1->getMSH_1()->getData() << std::endl;
+
+	// Another way to load information into a message structure is to use the
+	// pipeToMsg function. The loaded data will be lost:
+	// The output will be :
+	// > |
+	// > ^~\&
+	std::string pipe_string = "MSH|^~\\&|GHH LAB|ELAB-3|GHH OE|BLDG4|200202150930||ORU^R01|CNTRL-3456|P|2.4";
+	pipeToMsg(&msg, pipe_string);
+	std::cout << p_msh_1->getMSH_1()->getData() << std::endl;
+	std::cout << p_msh_1->getMSH_2()->getData() << std::endl;
+
+	// Loaded data may be corrected:
+	// The output will be :
+	// > I want my data back!
+	p_msh_1->getMSH_1()->setData("I want my data back!");
+	std::cout << p_msh_1->getMSH_1()->getData() << std::endl;
+
+	// What about pipe string? The MSH_1 has to have only the segment delimeter
+	// symbol: '|'. It is a special case.
+	// The output will be :
+	// > MSH|^~\&|GHH LAB|ELAB-3|GHH OE|BLDG4|200202150930||ORU^R01|CNTRL-3456|P|2.4
+	pipe_string.clear();
+	msgToPipe(&msg, pipe_string);
+	std::cout << pipe_string << std::endl;
+
+	// Correct another field of the message:
+	// The output will be :
+	// > MSH|^~\&|GHH LAB|ELAB-3|GHH OE|BLDG4|200202150930|my data string|ORU^R01|CNTRL-3456|P|2.4
+	p_msh_1->getMSH_8()->setData("my data string");
+	msgToPipe(&msg, pipe_string);
+	std::cout << pipe_string << std::endl;
+
+	return 0;
+}
+
+=======
 Please see HOWTO file for build inctructions and example usage.
+>>>>>>> 86efb578e4e6acc3f4577fb86d1ada9b1ce6bf2b
