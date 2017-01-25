@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{601B3015-D1A1-4305-A6BD-3BD6C53E984D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HL7SDK_2_4</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\dataencode.h" />
+    <ClInclude Include="..\..\common\HL7Exception.h" />
+    <ClInclude Include="..\..\common\hl7mllp.h" />
+    <ClInclude Include="..\..\common\HL7Object.h" />
+    <ClInclude Include="..\..\common\hl7socket.h" />
+    <ClInclude Include="..\..\common\ObjToPipe.h" />
+    <ClInclude Include="..\..\common\simple.h" />
+    <ClInclude Include="..\..\common\util.h" />
+    <ClInclude Include="..\..\common\validation.h" />
+    <ClInclude Include="..\datatype\AD.h" />
+    <ClInclude Include="..\datatype\AUI.h" />
+    <ClInclude Include="..\datatype\CCD.h" />
+    <ClInclude Include="..\datatype\CCP.h" />
+    <ClInclude Include="..\datatype\CD.h" />
+    <ClInclude Include="..\datatype\CE.h" />
+    <ClInclude Include="..\datatype\CE_0002.h" />
+    <ClInclude Include="..\datatype\CE_0005.h" />
+    <ClInclude Include="..\datatype\CE_0006.h" />
+    <ClInclude Include="..\datatype\CE_0048.h" />
+    <ClInclude Include="..\datatype\CE_0049.h" />
+    <ClInclude Include="..\datatype\CE_0050.h" />
+    <ClInclude Include="..\datatype\CE_0051.h" />
+    <ClInclude Include="..\datatype\CE_0055.h" />
+    <ClInclude Include="..\datatype\CE_0059.h" />
+    <ClInclude Include="..\datatype\CE_0063.h" />
+    <ClInclude Include="..\datatype\CE_0066.h" />
+    <ClInclude Include="..\datatype\CE_0069.h" />
+    <ClInclude Include="..\datatype\CE_0070.h" />
+    <ClInclude Include="..\datatype\CE_0072.h" />
+    <ClInclude Include="..\datatype\CE_0083.h" />
+    <ClInclude Include="..\datatype\CE_0088.h" />
+    <ClInclude Include="..\datatype\CE_0114.h" />
+    <ClInclude Include="..\datatype\CE_0118.h" />
+    <ClInclude Include="..\datatype\CE_0127.h" />
+    <ClInclude Include="..\datatype\CE_0128.h" />
+    <ClInclude Include="..\datatype\CE_0129.h" />
+    <ClInclude Include="..\datatype\CE_0131.h" />
+    <ClInclude Include="..\datatype\CE_0132.h" />
+    <ClInclude Include="..\datatype\CE_0136.h" />
+    <ClInclude Include="..\datatype\CE_0160.h" />
+    <ClInclude Include="..\datatype\CE_0162.h" />
+    <ClInclude Include="..\datatype\CE_0163.h" />
+    <ClInclude Include="..\datatype\CE_0164.h" />
+    <ClInclude Include="..\datatype\CE_0165.h" />
+    <ClInclude Include="..\datatype\CE_0171.h" />
+    <ClInclude Include="..\datatype\CE_0172.h" />
+    <ClInclude Include="..\datatype\CE_0175.h" />
+    <ClInclude Include="..\datatype\CE_0181.h" />
+    <ClInclude Include="..\datatype\CE_0184.h" />
+    <ClInclude Include="..\datatype\CE_0185.h" />
+    <ClInclude Include="..\datatype\CE_0189.h" />
+    <ClInclude Include="..\datatype\CE_0212.h" />
+    <ClInclude Include="..\datatype\CE_0215.h" />
+    <ClInclude Include="..\datatype\CE_0218.h" />
+    <ClInclude Include="..\datatype\CE_0222.h" />
+    <ClInclude Include="..\datatype\CE_0227.h" />
+    <ClInclude Include="..\datatype\CE_0233.h" />
+    <ClInclude Include="..\datatype\CE_0247.h" />
+    <ClInclude Include="..\datatype\CE_0254.h" />
+    <ClInclude Include="..\datatype\CE_0255.h" />
+    <ClInclude Include="..\datatype\CE_0258.h" />
+    <ClInclude Include="..\datatype\CE_0259.h" />
+    <ClInclude Include="..\datatype\CE_0264.h" />
+    <ClInclude Include="..\datatype\CE_0265.h" />
+    <ClInclude Include="..\datatype\CE_0276.h" />
+    <ClInclude Include="..\datatype\CE_0277.h" />
+    <ClInclude Include="..\datatype\CE_0278.h" />
+    <ClInclude Include="..\datatype\CE_0280.h" />
+    <ClInclude Include="..\datatype\CE_0281.h" />
+    <ClInclude Include="..\datatype\CE_0282.h" />
+    <ClInclude Include="..\datatype\CE_0283.h" />
+    <ClInclude Include="..\datatype\CE_0284.h" />
+    <ClInclude Include="..\datatype\CE_0285.h" />
+    <ClInclude Include="..\datatype\CE_0286.h" />
+    <ClInclude Include="..\datatype\CE_0292.h" />
+    <ClInclude Include="..\datatype\CE_0293.h" />
+    <ClInclude Include="..\datatype\CE_0296.h" />
+    <ClInclude Include="..\datatype\CE_0324.h" />
+    <ClInclude Include="..\datatype\CE_0325.h" />
+    <ClInclude Include="..\datatype\CE_0336.h" />
+    <ClInclude Include="..\datatype\CE_0339.h" />
+    <ClInclude Include="..\datatype\CE_0340.h" />
+    <ClInclude Include="..\datatype\CE_0341.h" />
+    <ClInclude Include="..\datatype\CE_0342.h" />
+    <ClInclude Include="..\datatype\CE_0343.h" />
+    <ClInclude Include="..\datatype\CE_0344.h" />
+    <ClInclude Include="..\datatype\CE_0345.h" />
+    <ClInclude Include="..\datatype\CE_0346.h" />
+    <ClInclude Include="..\datatype\CE_0347.h" />
+    <ClInclude Include="..\datatype\CE_0348.h" />
+    <ClInclude Include="..\datatype\CE_0349.h" />
+    <ClInclude Include="..\datatype\CE_0351.h" />
+    <ClInclude Include="..\datatype\CE_0357.h" />
+    <ClInclude Include="..\datatype\CE_0358.h" />
+    <ClInclude Include="..\datatype\CE_0364.h" />
+    <ClInclude Include="..\datatype\CE_0365.h" />
+    <ClInclude Include="..\datatype\CE_0366.h" />
+    <ClInclude Include="..\datatype\CE_0367.h" />
+    <ClInclude Include="..\datatype\CE_0368.h" />
+    <ClInclude Include="..\datatype\CE_0369.h" />
+    <ClInclude Include="..\datatype\CE_0370.h" />
+    <ClInclude Include="..\datatype\CE_0371.h" />
+    <ClInclude Include="..\datatype\CE_0373.h" />
+    <ClInclude Include="..\datatype\CE_0374.h" />
+    <ClInclude Include="..\datatype\CE_0375.h" />
+    <ClInclude Include="..\datatype\CE_0376.h" />
+    <ClInclude Include="..\datatype\CE_0377.h" />
+    <ClInclude Include="..\datatype\CE_0378.h" />
+    <ClInclude Include="..\datatype\CE_0379.h" />
+    <ClInclude Include="..\datatype\CE_0380.h" />
+    <ClInclude Include="..\datatype\CE_0381.h" />
+    <ClInclude Include="..\datatype\CE_0382.h" />
+    <ClInclude Include="..\datatype\CE_0383.h" />
+    <ClInclude Include="..\datatype\CE_0384.h" />
+    <ClInclude Include="..\datatype\CE_0385.h" />
+    <ClInclude Include="..\datatype\CE_0386.h" />
+    <ClInclude Include="..\datatype\CE_0387.h" />
+    <ClInclude Include="..\datatype\CE_0388.h" />
+    <ClInclude Include="..\datatype\CE_0389.h" />
+    <ClInclude Include="..\datatype\CE_0393.h" />
+    <ClInclude Include="..\datatype\CE_0394.h" />
+    <ClInclude Include="..\datatype\CE_0401.h" />
+    <ClInclude Include="..\datatype\CE_0402.h" />
+    <ClInclude Include="..\datatype\CE_0403.h" />
+    <ClInclude Include="..\datatype\CE_0404.h" />
+    <ClInclude Include="..\datatype\CE_0405.h" />
+    <ClInclude Include="..\datatype\CE_0406.h" />
+    <ClInclude Include="..\datatype\CE_0411.h" />
+    <ClInclude Include="..\datatype\CE_0412.h" />
+    <ClInclude Include="..\datatype\CE_0413.h" />
+    <ClInclude Include="..\datatype\CE_0414.h" />
+    <ClInclude Include="..\datatype\CE_0417.h" />
+    <ClInclude Include="..\datatype\CE_0421.h" />
+    <ClInclude Include="..\datatype\CE_0422.h" />
+    <ClInclude Include="..\datatype\CE_0423.h" />
+    <ClInclude Include="..\datatype\CE_0424.h" />
+    <ClInclude Include="..\datatype\CE_0425.h" />
+    <ClInclude Include="..\datatype\CE_0426.h" />
+    <ClInclude Include="..\datatype\CE_0427.h" />
+    <ClInclude Include="..\datatype\CE_0428.h" />
+    <ClInclude Include="..\datatype\CE_0429.h" />
+    <ClInclude Include="..\datatype\CE_0430.h" />
+    <ClInclude Include="..\datatype\CE_0431.h" />
+    <ClInclude Include="..\datatype\CE_0432.h" />
+    <ClInclude Include="..\datatype\CE_0433.h" />
+    <ClInclude Include="..\datatype\CE_0434.h" />
+    <ClInclude Include="..\datatype\CE_0435.h" />
+    <ClInclude Include="..\datatype\CE_0436.h" />
+    <ClInclude Include="..\datatype\CE_0437.h" />
+    <ClInclude Include="..\datatype\CE_0438.h" />
+    <ClInclude Include="..\datatype\CE_0443.h" />
+    <ClInclude Include="..\datatype\CE_0446.h" />
+    <ClInclude Include="..\datatype\CE_0447.h" />
+    <ClInclude Include="..\datatype\CE_0450.h" />
+    <ClInclude Include="..\datatype\CE_0451.h" />
+    <ClInclude Include="..\datatype\CE_0452.h" />
+    <ClInclude Include="..\datatype\CE_0453.h" />
+    <ClInclude Include="..\datatype\CE_0454.h" />
+    <ClInclude Include="..\datatype\CE_0461.h" />
+    <ClInclude Include="..\datatype\CE_0462.h" />
+    <ClInclude Include="..\datatype\CE_0463.h" />
+    <ClInclude Include="..\datatype\CE_0464.h" />
+    <ClInclude Include="..\datatype\CE_0466.h" />
+    <ClInclude Include="..\datatype\CE_0471.h" />
+    <ClInclude Include="..\datatype\CE_0474.h" />
+    <ClInclude Include="..\datatype\CF.h" />
+    <ClInclude Include="..\datatype\CK.h" />
+    <ClInclude Include="..\datatype\CN.h" />
+    <ClInclude Include="..\datatype\CNE.h" />
+    <ClInclude Include="..\datatype\CNN.h" />
+    <ClInclude Include="..\datatype\CP.h" />
+    <ClInclude Include="..\datatype\CQ.h" />
+    <ClInclude Include="..\datatype\CSU.h" />
+    <ClInclude Include="..\datatype\CWE.h" />
+    <ClInclude Include="..\datatype\CX.h" />
+    <ClInclude Include="..\datatype\DDI.h" />
+    <ClInclude Include="..\datatype\DIN.h" />
+    <ClInclude Include="..\datatype\DLD.h" />
+    <ClInclude Include="..\datatype\DLN.h" />
+    <ClInclude Include="..\datatype\DLT.h" />
+    <ClInclude Include="..\datatype\DR.h" />
+    <ClInclude Include="..\datatype\DT.h" />
+    <ClInclude Include="..\datatype\DTN.h" />
+    <ClInclude Include="..\datatype\ED.h" />
+    <ClInclude Include="..\datatype\EI.h" />
+    <ClInclude Include="..\datatype\EIP.h" />
+    <ClInclude Include="..\datatype\ELD.h" />
+    <ClInclude Include="..\datatype\FC.h" />
+    <ClInclude Include="..\datatype\FN.h" />
+    <ClInclude Include="..\datatype\FT.h" />
+    <ClInclude Include="..\datatype\HD.h" />
+    <ClInclude Include="..\datatype\ID.h" />
+    <ClInclude Include="..\datatype\IS.h" />
+    <ClInclude Include="..\datatype\JCC.h" />
+    <ClInclude Include="..\datatype\LA1.h" />
+    <ClInclude Include="..\datatype\LA2.h" />
+    <ClInclude Include="..\datatype\MA.h" />
+    <ClInclude Include="..\datatype\MO.h" />
+    <ClInclude Include="..\datatype\MOC.h" />
+    <ClInclude Include="..\datatype\MOP.h" />
+    <ClInclude Include="..\datatype\MSG.h" />
+    <ClInclude Include="..\datatype\NA.h" />
+    <ClInclude Include="..\datatype\NDL.h" />
+    <ClInclude Include="..\datatype\NM.h" />
+    <ClInclude Include="..\datatype\NR.h" />
+    <ClInclude Include="..\datatype\OCD.h" />
+    <ClInclude Include="..\datatype\OSD.h" />
+    <ClInclude Include="..\datatype\OSP.h" />
+    <ClInclude Include="..\datatype\PCF.h" />
+    <ClInclude Include="..\datatype\PI.h" />
+    <ClInclude Include="..\datatype\PIP.h" />
+    <ClInclude Include="..\datatype\PL.h" />
+    <ClInclude Include="..\datatype\PLN.h" />
+    <ClInclude Include="..\datatype\PN.h" />
+    <ClInclude Include="..\datatype\PPN.h" />
+    <ClInclude Include="..\datatype\PRL.h" />
+    <ClInclude Include="..\datatype\PT.h" />
+    <ClInclude Include="..\datatype\PTA.h" />
+    <ClInclude Include="..\datatype\QIP.h" />
+    <ClInclude Include="..\datatype\QSC.h" />
+    <ClInclude Include="..\datatype\RCD.h" />
+    <ClInclude Include="..\datatype\RFR.h" />
+    <ClInclude Include="..\datatype\RI.h" />
+    <ClInclude Include="..\datatype\RMC.h" />
+    <ClInclude Include="..\datatype\RP.h" />
+    <ClInclude Include="..\datatype\SAD.h" />
+    <ClInclude Include="..\datatype\SCV.h" />
+    <ClInclude Include="..\datatype\SI.h" />
+    <ClInclude Include="..\datatype\SN.h" />
+    <ClInclude Include="..\datatype\SPD.h" />
+    <ClInclude Include="..\datatype\SPS.h" />
+    <ClInclude Include="..\datatype\SRT.h" />
+    <ClInclude Include="..\datatype\ST.h" />
+    <ClInclude Include="..\datatype\TM.h" />
+    <ClInclude Include="..\datatype\TN.h" />
+    <ClInclude Include="..\datatype\TQ.h" />
+    <ClInclude Include="..\datatype\TS.h" />
+    <ClInclude Include="..\datatype\TX.h" />
+    <ClInclude Include="..\datatype\TX_CHALLENGE.h" />
+    <ClInclude Include="..\datatype\UVC.h" />
+    <ClInclude Include="..\datatype\varies.h" />
+    <ClInclude Include="..\datatype\VH.h" />
+    <ClInclude Include="..\datatype\VID.h" />
+    <ClInclude Include="..\datatype\VR.h" />
+    <ClInclude Include="..\datatype\WVI.h" />
+    <ClInclude Include="..\datatype\WVS.h" />
+    <ClInclude Include="..\datatype\XAD.h" />
+    <ClInclude Include="..\datatype\XCN.h" />
+    <ClInclude Include="..\datatype\XON.h" />
+    <ClInclude Include="..\datatype\XPN.h" />
+    <ClInclude Include="..\datatype\XTN.h" />
+    <ClInclude Include="..\message\ACK.h" />
+    <ClInclude Include="..\message\ACK_N02.h" />
+    <ClInclude Include="..\message\ADR_A19.h" />
+    <ClInclude Include="..\message\ADT_A01.h" />
+    <ClInclude Include="..\message\ADT_A02.h" />
+    <ClInclude Include="..\message\ADT_A03.h" />
+    <ClInclude Include="..\message\ADT_A05.h" />
+    <ClInclude Include="..\message\ADT_A06.h" />
+    <ClInclude Include="..\message\ADT_A09.h" />
+    <ClInclude Include="..\message\ADT_A15.h" />
+    <ClInclude Include="..\message\ADT_A16.h" />
+    <ClInclude Include="..\message\ADT_A17.h" />
+    <ClInclude Include="..\message\ADT_A18.h" />
+    <ClInclude Include="..\message\ADT_A20.h" />
+    <ClInclude Include="..\message\ADT_A21.h" />
+    <ClInclude Include="..\message\ADT_A24.h" />
+    <ClInclude Include="..\message\ADT_A30.h" />
+    <ClInclude Include="..\message\ADT_A37.h" />
+    <ClInclude Include="..\message\ADT_A38.h" />
+    <ClInclude Include="..\message\ADT_A39.h" />
+    <ClInclude Include="..\message\ADT_A43.h" />
+    <ClInclude Include="..\message\ADT_A45.h" />
+    <ClInclude Include="..\message\ADT_A50.h" />
+    <ClInclude Include="..\message\ADT_A52.h" />
+    <ClInclude Include="..\message\ADT_A54.h" />
+    <ClInclude Include="..\message\ADT_A60.h" />
+    <ClInclude Include="..\message\ADT_A61.h" />
+    <ClInclude Include="..\message\BAR_P01.h" />
+    <ClInclude Include="..\message\BAR_P02.h" />
+    <ClInclude Include="..\message\BAR_P05.h" />
+    <ClInclude Include="..\message\BAR_P06.h" />
+    <ClInclude Include="..\message\BAR_P10.h" />
+    <ClInclude Include="..\message\CRM_C01.h" />
+    <ClInclude Include="..\message\CSU_C09.h" />
+    <ClInclude Include="..\message\DFT_P03.h" />
+    <ClInclude Include="..\message\DFT_P11.h" />
+    <ClInclude Include="..\message\DOC_T12.h" />
+    <ClInclude Include="..\message\DSR_P04.h" />
+    <ClInclude Include="..\message\DSR_Q01.h" />
+    <ClInclude Include="..\message\DSR_Q03.h" />
+    <ClInclude Include="..\message\EAC_U07.h" />
+    <ClInclude Include="..\message\EAN_U09.h" />
+    <ClInclude Include="..\message\EAR_U08.h" />
+    <ClInclude Include="..\message\EDR_R07.h" />
+    <ClInclude Include="..\message\EQQ_Q04.h" />
+    <ClInclude Include="..\message\ERP_R09.h" />
+    <ClInclude Include="..\message\ESR_U02.h" />
+    <ClInclude Include="..\message\ESU_U01.h" />
+    <ClInclude Include="..\message\INR_U06.h" />
+    <ClInclude Include="..\message\INU_U05.h" />
+    <ClInclude Include="..\message\LSU_U12.h" />
+    <ClInclude Include="..\message\MDM_T01.h" />
+    <ClInclude Include="..\message\MDM_T02.h" />
+    <ClInclude Include="..\message\MFK_M01.h" />
+    <ClInclude Include="..\message\MFN_M01.h" />
+    <ClInclude Include="..\message\MFN_M02.h" />
+    <ClInclude Include="..\message\MFN_M03.h" />
+    <ClInclude Include="..\message\MFN_M04.h" />
+    <ClInclude Include="..\message\MFN_M05.h" />
+    <ClInclude Include="..\message\MFN_M06.h" />
+    <ClInclude Include="..\message\MFN_M07.h" />
+    <ClInclude Include="..\message\MFN_M08.h" />
+    <ClInclude Include="..\message\MFN_M09.h" />
+    <ClInclude Include="..\message\MFN_M10.h" />
+    <ClInclude Include="..\message\MFN_M11.h" />
+    <ClInclude Include="..\message\MFN_M12.h" />
+    <ClInclude Include="..\message\MFQ_M01.h" />
+    <ClInclude Include="..\message\MFR_M01.h" />
+    <ClInclude Include="..\message\NMD_N02.h" />
+    <ClInclude Include="..\message\NMQ_N01.h" />
+    <ClInclude Include="..\message\NMR_N01.h" />
+    <ClInclude Include="..\message\OMD_O03.h" />
+    <ClInclude Include="..\message\OMG_O19.h" />
+    <ClInclude Include="..\message\OML_O21.h" />
+    <ClInclude Include="..\message\OMN_O07.h" />
+    <ClInclude Include="..\message\OMP_O09.h" />
+    <ClInclude Include="..\message\OMS_O05.h" />
+    <ClInclude Include="..\message\ORD_O04.h" />
+    <ClInclude Include="..\message\ORF_R04.h" />
+    <ClInclude Include="..\message\ORG_O20.h" />
+    <ClInclude Include="..\message\ORL_O22.h" />
+    <ClInclude Include="..\message\ORM_O01.h" />
+    <ClInclude Include="..\message\ORN_O08.h" />
+    <ClInclude Include="..\message\ORP_O10.h" />
+    <ClInclude Include="..\message\ORR_O02.h" />
+    <ClInclude Include="..\message\ORS_O06.h" />
+    <ClInclude Include="..\message\ORU_R01.h" />
+    <ClInclude Include="..\message\OSQ_Q06.h" />
+    <ClInclude Include="..\message\OSR_Q06.h" />
+    <ClInclude Include="..\message\OUL_R21.h" />
+    <ClInclude Include="..\message\PEX_P07.h" />
+    <ClInclude Include="..\message\PGL_PC6.h" />
+    <ClInclude Include="..\message\PMU_B01.h" />
+    <ClInclude Include="..\message\PMU_B03.h" />
+    <ClInclude Include="..\message\PMU_B04.h" />
+    <ClInclude Include="..\message\PPG_PCG.h" />
+    <ClInclude Include="..\message\PPP_PCB.h" />
+    <ClInclude Include="..\message\PPR_PC1.h" />
+    <ClInclude Include="..\message\PPT_PCL.h" />
+    <ClInclude Include="..\message\PPV_PCA.h" />
+    <ClInclude Include="..\message\PRR_PC5.h" />
+    <ClInclude Include="..\message\PTR_PCF.h" />
+    <ClInclude Include="..\message\QBP_K13.h" />
+    <ClInclude Include="..\message\QBP_Q11.h" />
+    <ClInclude Include="..\message\QBP_Q13.h" />
+    <ClInclude Include="..\message\QBP_Q15.h" />
+    <ClInclude Include="..\message\QBP_Q21.h" />
+    <ClInclude Include="..\message\QBP_Qnn.h" />
+    <ClInclude Include="..\message\QBP_Z73.h" />
+    <ClInclude Include="..\message\QCK_Q02.h" />
+    <ClInclude Include="..\message\QCN_J01.h" />
+    <ClInclude Include="..\message\QRY_A19.h" />
+    <ClInclude Include="..\message\QRY_P04.h" />
+    <ClInclude Include="..\message\QRY_PC4.h" />
+    <ClInclude Include="..\message\QRY_Q01.h" />
+    <ClInclude Include="..\message\QRY_Q02.h" />
+    <ClInclude Include="..\message\QRY_R02.h" />
+    <ClInclude Include="..\message\QRY_T12.h" />
+    <ClInclude Include="..\message\QSB_Q16.h" />
+    <ClInclude Include="..\message\QVR_Q17.h" />
+    <ClInclude Include="..\message\RAR_RAR.h" />
+    <ClInclude Include="..\message\RAS_O17.h" />
+    <ClInclude Include="..\message\RCI_I05.h" />
+    <ClInclude Include="..\message\RCL_I06.h" />
+    <ClInclude Include="..\message\RDE_O11.h" />
+    <ClInclude Include="..\message\RDR_RDR.h" />
+    <ClInclude Include="..\message\RDS_O13.h" />
+    <ClInclude Include="..\message\RDY_K15.h" />
+    <ClInclude Include="..\message\REF_I12.h" />
+    <ClInclude Include="..\message\RER_RER.h" />
+    <ClInclude Include="..\message\RGR_RGR.h" />
+    <ClInclude Include="..\message\RGV_O15.h" />
+    <ClInclude Include="..\message\ROR_ROR.h" />
+    <ClInclude Include="..\message\RPA_I08.h" />
+    <ClInclude Include="..\message\RPI_I01.h" />
+    <ClInclude Include="..\message\RPI_I04.h" />
+    <ClInclude Include="..\message\RPL_I02.h" />
+    <ClInclude Include="..\message\RPR_I03.h" />
+    <ClInclude Include="..\message\RQA_I08.h" />
+    <ClInclude Include="..\message\RQC_I05.h" />
+    <ClInclude Include="..\message\RQI_I01.h" />
+    <ClInclude Include="..\message\RQP_I04.h" />
+    <ClInclude Include="..\message\RQQ_Q09.h" />
+    <ClInclude Include="..\message\RRA_O18.h" />
+    <ClInclude Include="..\message\RRD_O14.h" />
+    <ClInclude Include="..\message\RRE_O12.h" />
+    <ClInclude Include="..\message\RRG_O16.h" />
+    <ClInclude Include="..\message\RRI_I12.h" />
+    <ClInclude Include="..\message\RSP_K11.h" />
+    <ClInclude Include="..\message\RSP_K13.h" />
+    <ClInclude Include="..\message\RSP_K15.h" />
+    <ClInclude Include="..\message\RSP_K21.h" />
+    <ClInclude Include="..\message\RSP_K22.h" />
+    <ClInclude Include="..\message\RSP_K23.h" />
+    <ClInclude Include="..\message\RSP_K24.h" />
+    <ClInclude Include="..\message\RSP_K25.h" />
+    <ClInclude Include="..\message\RSP_Z82.h" />
+    <ClInclude Include="..\message\RSP_Z86.h" />
+    <ClInclude Include="..\message\RSP_Z88.h" />
+    <ClInclude Include="..\message\RSP_Z90.h" />
+    <ClInclude Include="..\message\RTB_K13.h" />
+    <ClInclude Include="..\message\RTB_Knn.h" />
+    <ClInclude Include="..\message\RTB_Q13.h" />
+    <ClInclude Include="..\message\RTB_Z74.h" />
+    <ClInclude Include="..\message\SIU_S12.h" />
+    <ClInclude Include="..\message\SPQ_Q08.h" />
+    <ClInclude Include="..\message\SQM_S25.h" />
+    <ClInclude Include="..\message\SQR_S25.h" />
+    <ClInclude Include="..\message\SRM_S01.h" />
+    <ClInclude Include="..\message\SRR_S01.h" />
+    <ClInclude Include="..\message\SSR_U04.h" />
+    <ClInclude Include="..\message\SSU_U03.h" />
+    <ClInclude Include="..\message\SUR_P09.h" />
+    <ClInclude Include="..\message\TBR_R08.h" />
+    <ClInclude Include="..\message\TCU_U10.h" />
+    <ClInclude Include="..\message\UDM_Q05.h" />
+    <ClInclude Include="..\message\VQQ_Q07.h" />
+    <ClInclude Include="..\message\VXQ_V01.h" />
+    <ClInclude Include="..\message\VXR_V03.h" />
+    <ClInclude Include="..\message\VXU_V04.h" />
+    <ClInclude Include="..\message\VXX_V02.h" />
+    <ClInclude Include="..\segment\ABS.h" />
+    <ClInclude Include="..\segment\ACC.h" />
+    <ClInclude Include="..\segment\ADD.h" />
+    <ClInclude Include="..\segment\AFF.h" />
+    <ClInclude Include="..\segment\AIG.h" />
+    <ClInclude Include="..\segment\AIL.h" />
+    <ClInclude Include="..\segment\AIP.h" />
+    <ClInclude Include="..\segment\AIS.h" />
+    <ClInclude Include="..\segment\AL1.h" />
+    <ClInclude Include="..\segment\APR.h" />
+    <ClInclude Include="..\segment\ARQ.h" />
+    <ClInclude Include="..\segment\AUT.h" />
+    <ClInclude Include="..\segment\BHS.h" />
+    <ClInclude Include="..\segment\BLC.h" />
+    <ClInclude Include="..\segment\BLG.h" />
+    <ClInclude Include="..\segment\BTS.h" />
+    <ClInclude Include="..\segment\CDM.h" />
+    <ClInclude Include="..\segment\CM0.h" />
+    <ClInclude Include="..\segment\CM1.h" />
+    <ClInclude Include="..\segment\CM2.h" />
+    <ClInclude Include="..\segment\CNS.h" />
+    <ClInclude Include="..\segment\CSP.h" />
+    <ClInclude Include="..\segment\CSR.h" />
+    <ClInclude Include="..\segment\CSS.h" />
+    <ClInclude Include="..\segment\CTD.h" />
+    <ClInclude Include="..\segment\CTI.h" />
+    <ClInclude Include="..\segment\DB1.h" />
+    <ClInclude Include="..\segment\DG1.h" />
+    <ClInclude Include="..\segment\DRG.h" />
+    <ClInclude Include="..\segment\DSC.h" />
+    <ClInclude Include="..\segment\DSP.h" />
+    <ClInclude Include="..\segment\ECD.h" />
+    <ClInclude Include="..\segment\ECR.h" />
+    <ClInclude Include="..\segment\EDU.h" />
+    <ClInclude Include="..\segment\EQL.h" />
+    <ClInclude Include="..\segment\EQP.h" />
+    <ClInclude Include="..\segment\EQU.h" />
+    <ClInclude Include="..\segment\ERQ.h" />
+    <ClInclude Include="..\segment\ERR.h" />
+    <ClInclude Include="..\segment\EVN.h" />
+    <ClInclude Include="..\segment\FAC.h" />
+    <ClInclude Include="..\segment\FHS.h" />
+    <ClInclude Include="..\segment\FT1.h" />
+    <ClInclude Include="..\segment\FTS.h" />
+    <ClInclude Include="..\segment\GOL.h" />
+    <ClInclude Include="..\segment\GP1.h" />
+    <ClInclude Include="..\segment\GP2.h" />
+    <ClInclude Include="..\segment\GT1.h" />
+    <ClInclude Include="..\segment\Hxx.h" />
+    <ClInclude Include="..\segment\IAM.h" />
+    <ClInclude Include="..\segment\IN1.h" />
+    <ClInclude Include="..\segment\IN2.h" />
+    <ClInclude Include="..\segment\IN3.h" />
+    <ClInclude Include="..\segment\INV.h" />
+    <ClInclude Include="..\segment\ISD.h" />
+    <ClInclude Include="..\segment\LAN.h" />
+    <ClInclude Include="..\segment\LCC.h" />
+    <ClInclude Include="..\segment\LCH.h" />
+    <ClInclude Include="..\segment\LDP.h" />
+    <ClInclude Include="..\segment\LOC.h" />
+    <ClInclude Include="..\segment\LRL.h" />
+    <ClInclude Include="..\segment\MFA.h" />
+    <ClInclude Include="..\segment\MFE.h" />
+    <ClInclude Include="..\segment\MFI.h" />
+    <ClInclude Include="..\segment\MRG.h" />
+    <ClInclude Include="..\segment\MSA.h" />
+    <ClInclude Include="..\segment\MSH.h" />
+    <ClInclude Include="..\segment\NCK.h" />
+    <ClInclude Include="..\segment\NDS.h" />
+    <ClInclude Include="..\segment\NK1.h" />
+    <ClInclude Include="..\segment\NPU.h" />
+    <ClInclude Include="..\segment\NSC.h" />
+    <ClInclude Include="..\segment\NST.h" />
+    <ClInclude Include="..\segment\NTE.h" />
+    <ClInclude Include="..\segment\OBR.h" />
+    <ClInclude Include="..\segment\OBX.h" />
+    <ClInclude Include="..\segment\ODS.h" />
+    <ClInclude Include="..\segment\ODT.h" />
+    <ClInclude Include="..\segment\OM1.h" />
+    <ClInclude Include="..\segment\OM2.h" />
+    <ClInclude Include="..\segment\OM3.h" />
+    <ClInclude Include="..\segment\OM4.h" />
+    <ClInclude Include="..\segment\OM5.h" />
+    <ClInclude Include="..\segment\OM6.h" />
+    <ClInclude Include="..\segment\OM7.h" />
+    <ClInclude Include="..\segment\ORC.h" />
+    <ClInclude Include="..\segment\ORG.h" />
+    <ClInclude Include="..\segment\PCR.h" />
+    <ClInclude Include="..\segment\PD1.h" />
+    <ClInclude Include="..\segment\PDA.h" />
+    <ClInclude Include="..\segment\PDC.h" />
+    <ClInclude Include="..\segment\PEO.h" />
+    <ClInclude Include="..\segment\PES.h" />
+    <ClInclude Include="..\segment\PID.h" />
+    <ClInclude Include="..\segment\PR1.h" />
+    <ClInclude Include="..\segment\PRA.h" />
+    <ClInclude Include="..\segment\PRB.h" />
+    <ClInclude Include="..\segment\PRC.h" />
+    <ClInclude Include="..\segment\PRD.h" />
+    <ClInclude Include="..\segment\PSH.h" />
+    <ClInclude Include="..\segment\PTH.h" />
+    <ClInclude Include="..\segment\PV1.h" />
+    <ClInclude Include="..\segment\PV2.h" />
+    <ClInclude Include="..\segment\QAK.h" />
+    <ClInclude Include="..\segment\QID.h" />
+    <ClInclude Include="..\segment\QPD.h" />
+    <ClInclude Include="..\segment\QRD.h" />
+    <ClInclude Include="..\segment\QRF.h" />
+    <ClInclude Include="..\segment\QRI.h" />
+    <ClInclude Include="..\segment\RCP.h" />
+    <ClInclude Include="..\segment\RDF.h" />
+    <ClInclude Include="..\segment\RDT.h" />
+    <ClInclude Include="..\segment\RF1.h" />
+    <ClInclude Include="..\segment\RGS.h" />
+    <ClInclude Include="..\segment\RMI.h" />
+    <ClInclude Include="..\segment\ROL.h" />
+    <ClInclude Include="..\segment\RQ1.h" />
+    <ClInclude Include="..\segment\RQD.h" />
+    <ClInclude Include="..\segment\RXA.h" />
+    <ClInclude Include="..\segment\RXC.h" />
+    <ClInclude Include="..\segment\RXD.h" />
+    <ClInclude Include="..\segment\RXE.h" />
+    <ClInclude Include="..\segment\RXG.h" />
+    <ClInclude Include="..\segment\RXO.h" />
+    <ClInclude Include="..\segment\RXR.h" />
+    <ClInclude Include="..\segment\SAC.h" />
+    <ClInclude Include="..\segment\SCH.h" />
+    <ClInclude Include="..\segment\SID.h" />
+    <ClInclude Include="..\segment\SPR.h" />
+    <ClInclude Include="..\segment\STF.h" />
+    <ClInclude Include="..\segment\TCC.h" />
+    <ClInclude Include="..\segment\TCD.h" />
+    <ClInclude Include="..\segment\TXA.h" />
+    <ClInclude Include="..\segment\UB1.h" />
+    <ClInclude Include="..\segment\UB2.h" />
+    <ClInclude Include="..\segment\URD.h" />
+    <ClInclude Include="..\segment\URS.h" />
+    <ClInclude Include="..\segment\VAR.h" />
+    <ClInclude Include="..\segment\VTQ.h" />
+    <ClInclude Include="..\segment\ZL7.h" />
+    <ClInclude Include="..\segment\Zxx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\common\dataencode.cpp" />
+    <ClCompile Include="..\..\common\HL7Object.cpp" />
+    <ClCompile Include="..\..\common\ObjToPipe.cpp" />
+    <ClCompile Include="..\..\common\util.cpp" />
+    <ClCompile Include="..\..\common\validation.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

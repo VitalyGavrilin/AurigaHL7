@@ -15,13 +15,17 @@
  * along with Auriga HL7 library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <climits>
 #include <string>
 #include <stdio.h>
 #include <sstream>
 #include <inttypes.h>
 #include <algorithm>
-//#include "util.h"
 #include "dataencode.h"
+
+#ifndef WIN32
+#include <string.h>
+#endif // WIN32
 
 // pars string to int
 //  i - output integer

@@ -84,6 +84,11 @@
   <ItemGroup>
     <ClCompile Include="socket_test.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.4\WIN\HL7SDK_2_4.vcxproj">
+      <Project>{601b3015-d1a1-4305-a6bd-3bd6c53e984d}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

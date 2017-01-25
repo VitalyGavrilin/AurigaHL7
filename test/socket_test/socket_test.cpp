@@ -19,6 +19,7 @@
 #ifdef WIN32
 #include <Winsock2.h>
 #else //NOT WIN32
+#include <string.h>
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
@@ -96,7 +97,7 @@ size_t read_test( int fd, const void *buf, size_t count )
 #ifdef WIN32
           return (size_t)recv( (SOCKET)fd, (char*)buf, (int)count, 0 );
 #else // WIN32
-          return read( fd, buf, count );
+          return read( fd, (void*)buf, count );
 #endif //WIN32
      if ( ( fd != TEST_SOCKET ) || ( fd == ERROR_SOCKET_NOT_INITED ) )
           return -1;
@@ -176,79 +177,204 @@ int ioctl_test( int fd, unsigned long cmd, int* argp )
 #define SOCKET_TEST_FINISH \
      WSACleanup();
 #else
-atomic_t must_terminate = ATOMIC_INIT( 0 );
+int must_terminate = 0;
 #endif //WIN32
 
-#define TEST_SOCKET_ERROR( obj, sock_num, message1, message2, func, level, info ) \
-     { \
-          obj sock( sock_num ); \
-          read_num = 0; \
-          error_test_level = level; \
-          test_msg = message1; \
-          strcpy( buffer, message2 ); \
-          buf_len = strlen( buffer ); \
-          len = sock.##func( test_msg ); \
-          if ( -1 != len ) \
-          { \
-               bOk = false; \
-               cout << "FAIL ERROR test for " << #obj << "::" << #func << \
-                                                            " - " << info << endl; \
-          } \
+using namespace std;
+
+//#define TEST_SOCKET_ERROR( obj, sock_num, message1, message2, func, level, info ) 
+bool testHL7SocketErrorSend( int sock_num, const char* message1,
+     const char* message2, int level, const char* info )
+{ 
+     bool bRes = true;
+     HL7Socket sock( sock_num );
+     read_num = 0;
+     error_test_level = level;
+     std::string test_msg = message1;
+     strcpy( buffer, message2 );
+     buf_len = strlen( buffer );
+     int len = sock.send_msg( test_msg );
+     if ( -1 != len )
+     {
+          bRes = false;
+          cout << "FAIL ERROR test for HL7Socket::send_msg - " << info << endl;
+     } 
+     return bRes;
+}
+
+bool testHL7SocketErrorRecv( int sock_num, const char* message1,
+     const char* message2, int level, const char* info )
+{
+     bool bRes = true;
+     HL7Socket sock( sock_num );
+     read_num = 0;
+     error_test_level = level;
+     std::string test_msg = message1;
+     strcpy( buffer, message2 );
+     buf_len = strlen( buffer );
+     int len = sock.read_msg( test_msg );
+     if ( -1 != len )
+     {
+          bRes = false;
+          cout << "FAIL ERROR test for HL7Socket::send_msg - " << info << endl;
      }
+     return bRes;
+}
 
-#define COMPARE_OK \
-     ( test_msg.length() != len ) || \
-          ( memcmp( test_msg.c_str(), buffer, len ) != 0 )
-
-#define COMPARE_ERROR \
-     test_msg.length() == len
-
-#define COMPARE_OK_RCV( message ) \
-     ( strlen( message ) != len ) || \
-          ( memcmp( test_msg.c_str(), buffer, len ) != 0 )
-
-#define COMPARE_ERROR_RCV( message ) \
-     strlen( message ) == len
-
-#define COMPARE_MLLP_OK \
-     ( test_msg.length() != ( len - 3 ) ) || \
-     ( buffer[0] != 0x0b ) || \
-     ( memcmp( test_msg.c_str(), buffer + 1, len - 3 ) != 0 ) || \
-     ( buffer[ len - 2 ] != 0x1c ) || ( buffer[ len - 1 ] != 0x0d )
-
-#define COMPARE_MLLP_ERROR \
-     test_msg.length() == ( len - 3 )
-
-#define COMPARE_OK_MMLP_RCV( message ) \
-     ( strlen( message ) != len ) || \
-          ( memcmp( test_msg.c_str(), message, len ) != 0 )
-
-#define COMPARE_ERROR_MLLP_RCV( message ) \
-     message.length() == len
-
-#define TEST_SOCKED_SEND( obj, sock_num, message1, message2, partial,\
-                                                  func, cmp, type, info ) \
-     { \
-          obj sock( sock_num ); \
-          b_partial_test = partial; \
-          read_num = 0; \
-          test_msg = message1; \
-          strcpy( buffer, message2 ); \
-          buf_len = strlen( buffer ); \
-          len = sock.##func( test_msg ); \
-          if ( strlen( message1 ) < strlen( message2 ) ) \
-               strcpy( buffer, message2 ); \
-          if ( cmp ) \
-          { \
-               bOk = false; \
-               int req_len = test_msg.length(); \
-               if ( strlen( message1 ) < strlen( message2 ) ) \
-                    req_len = strlen( buffer ); \
-               cout << "FAIL " << type << " test for " << #obj << "::" << \
-                    #func << " " << info << " (to requested=" << req_len << \
-                    "; real=" << len << ")" << endl; \
-          } \
+bool testHL7MLLPErrorSend( int sock_num, const char* message1,
+     const char* message2, int level, const char* info )
+{
+     bool bRes = true;
+     HL7MLLP sock( sock_num );
+     read_num = 0;
+     error_test_level = level;
+     std::string test_msg = message1;
+     strcpy( buffer, message2 );
+     buf_len = strlen( buffer );
+     int len = sock.send_msg_mllp( test_msg );
+     if ( -1 != len )
+     {
+          bRes = false;
+          cout << "FAIL ERROR test for HL7MLLP::send_msg_mllp - " << info << endl;
      }
+     return bRes;
+}
+
+bool testHL7MLLPErrorRecv( int sock_num, const char* message1,
+     const char* message2, int level, const char* info )
+{
+     bool bRes = true;
+     HL7MLLP sock( sock_num );
+     read_num = 0;
+     error_test_level = level;
+     std::string test_msg = message1;
+     strcpy( buffer, message2 );
+     buf_len = strlen( buffer );
+     int len = sock.read_msg_mllp( test_msg );
+     if ( -1 != len )
+     {
+          bRes = false;
+          cout << "FAIL ERROR test for HL7MLLP::read_msg_mllp - " << info << endl;
+     }
+     return bRes;
+}
+
+bool testHL7SocketSend( int sock_num, const char* message1, 
+     bool partial, bool bOk, const char* info )
+{
+     bool bRes = true;
+     HL7Socket sock( sock_num );
+     b_partial_test = partial;
+     read_num = 0;
+     std::string test_msg = message1;
+     strcpy( buffer, "" );
+     buf_len = strlen( buffer );
+     int len = sock.send_msg( test_msg );
+     if ( ( bOk && ( ( test_msg.length() != len ) || 
+                    ( memcmp( test_msg.c_str(), buffer, len ) != 0 ) ) ) ||
+          ( !bOk && ( test_msg.length() == len ) ) )
+     { 
+          bRes = false; \
+          int req_len = test_msg.length();
+          cout << "FAIL ";
+          if ( bOk )
+               cout << "OK";
+          else
+               cout << "ERROR";
+          cout << " test for HL7Socket::send_msg " << info << 
+               " (to requested=" << req_len << "; real=" << len << ")" << endl; 
+     }
+     return bRes;
+}
+
+bool testHL7SocketRecv( int sock_num, const char* message2, 
+     const bool partial, bool bOk, const char* info )
+{
+     bool bRes = true;
+     HL7Socket sock( sock_num );
+     b_partial_test = partial;
+     read_num = 0;
+     std::string test_msg = "";
+     strcpy( buffer, message2 );
+     buf_len = strlen( buffer );
+     int len = sock.read_msg( test_msg );
+     strcpy( buffer, message2 );
+     if ( ( bOk && ( ( strlen( message2 ) != len ) || 
+                    ( memcmp( test_msg.c_str(), buffer, len ) != 0 ) ) ) ||
+          ( !bOk && ( strlen( message2 ) == len ) ) )
+     {
+          bRes = false;
+          int req_len = strlen( buffer );
+          cout << "FAIL ";
+          if ( bOk )
+               cout << "OK";
+          else
+               cout << "ERROR";
+          cout << " test for HL7Socket::send_msg " << info <<
+               " (to requested=" << req_len << "; real=" << len << ")" << endl;
+     }
+     return bRes;
+}
+
+bool testHL7MLLPSend( int sock_num, const char* message1, 
+     const char* message2, bool partial, bool bOk, const char* info )
+{
+     bool bRes = true;
+     HL7MLLP sock( sock_num );
+     b_partial_test = partial;
+     read_num = 0;
+     std::string test_msg = message1;
+     strcpy( buffer, "" );
+     buf_len = strlen( buffer );
+     int len = sock.send_msg_mllp( test_msg );
+     if ( ( bOk && ( ( test_msg.length() != ( len - 3 ) ) || 
+               ( buffer[ 0 ] != 0x0b ) || 
+               ( memcmp( test_msg.c_str(), buffer + 1, len - 3 ) != 0 ) || 
+               ( buffer[ len - 2 ] != 0x1c ) || 
+               ( buffer[ len - 1 ] != 0x0d ) ) ) ||
+          ( !bOk && ( test_msg.length() == ( len - 3 ) ) ) )
+     {
+          bRes = false;
+          int req_len = test_msg.length();
+          cout << "FAIL ";
+          if ( bOk )
+               cout << "OK";
+          else
+               cout << "ERROR";
+          cout << " test for HL7MLLP::send_msg_mllp " << info <<
+               " (to requested=" << req_len << "; real=" << len << ")" << endl;
+     }
+     return bRes;
+}
+
+bool testHL7MLLPRecv( int sock_num, const char* message2, const char* cmp_mes,
+     bool partial, bool bOk, const char* info )
+{
+     bool bRes = true;
+     HL7MLLP sock( sock_num );
+     b_partial_test = partial;
+     read_num = 0;
+     std::string test_msg = "";
+     strcpy( buffer, message2 );
+     buf_len = strlen( buffer );
+     int len = sock.read_msg_mllp( test_msg );
+     strcpy( buffer, message2 );
+     if ( ( bOk && ( ( strlen( cmp_mes ) != len ) || 
+               ( memcmp( test_msg.c_str(), cmp_mes, len ) != 0 ) ) ) ||
+          ( !bOk && ( strlen( cmp_mes ) == len ) ) )
+     {
+          bRes = false;
+          int req_len = strlen( buffer );
+          cout << "FAIL ";
+          if ( bOk )
+               cout << "OK";
+          else
+               cout << "ERROR";
+          cout << " test for HL7MLLP::send_msg_mllp " << info <<
+               " (to requested=" << req_len << "; real=" << len << ")" << endl;
+     }
+     return bRes;
+}
 
 #define COMPLEATE_LONG_STRING( val, size, str ) \
      for ( int i = 0; i < size; i++ ) \
@@ -263,9 +389,11 @@ typedef struct _TEST_PARAM
      int s;
 }TEST_PARAM;
 
-using namespace std;
-
+#ifdef WIN32
 DWORD __stdcall sock_serv_test( LPVOID lpParameter )
+#else // WIN32
+void* sock_serv_test( void* lpParameter )
+#endif // WIN32
 {
      TEST_PARAM* tst = (TEST_PARAM*)lpParameter;
 
@@ -273,10 +401,12 @@ DWORD __stdcall sock_serv_test( LPVOID lpParameter )
      {
           cout << "FAIL OK test for HL7SocketServer - error creating" \
                " thread" << endl;
-#ifndef WIN32
-          atomic_inc( &must_terminate );
-#endif //WIN32
+#ifdef WIN32
           return -1;
+#else // WIN32
+          must_terminate++;
+          return NULL;
+#endif //WIN32
      }
 
      HL7SocketServer sock( TEST_SOCKET ); // ok - creating server object
@@ -285,33 +415,44 @@ DWORD __stdcall sock_serv_test( LPVOID lpParameter )
           tst->bOk = false;
           cout << "FAIL OK test for HL7SocketServer creation - " \
                "error creating object" << endl;
-#ifndef WIN32
-          atomic_inc( &must_terminate );
-#endif //WIN32
+#ifdef WIN32
           return 0;
+#else // WIN32
+          must_terminate++;
+          return NULL;
+#endif //WIN32
      }
      int type = SOCK_RAW;
      int len = sizeof( int );
+#ifdef WIN32
      if ( 0 != getsockopt( sock.sockfd,
           SOL_SOCKET, SO_TYPE, (char*)&type, &len ) )
+#else // WIN32
+     if ( 0 != getsockopt( sock.sockfd,
+          SOL_SOCKET, SO_TYPE, (char*)&type, (unsigned int*)&len ) )
+#endif // WIN32
      {
           tst->bOk = false;
           cout << "FAIL OK test for HL7SocketServer creation"\
                " - getsockopt error" << endl;
-#ifndef WIN32
-          atomic_inc( &must_terminate );
-#endif //WIN32
+#ifdef WIN32
           return 0;
+#else // WIN32
+          must_terminate++;
+          return NULL;
+#endif //WIN32
      }
      if ( type != SOCK_STREAM )
      {
           tst->bOk = false;
           cout << "FAIL OK test for HL7SocketServer creation" \
                " - invalid socket type" << endl;
-#ifndef WIN32
-          atomic_inc( &must_terminate );
-#endif //WIN32
+#ifdef WIN32
           return 0;
+#else // WIN32
+          must_terminate++;
+          return NULL;
+#endif //WIN32
      }
 
      tst->bInited = true;
@@ -322,10 +463,12 @@ DWORD __stdcall sock_serv_test( LPVOID lpParameter )
           tst->bOk = false;
           cout << "FAIL OK test for HL7SocketServer creation - " \
                "error listen for connection" << endl;
-#ifndef WIN32
-          atomic_inc( &must_terminate );
-#endif //WIN32
+#ifdef WIN32
           return 0;
+#else // WIN32
+          must_terminate++;
+          return NULL;
+#endif //WIN32
      }
      std::string data;
      if ( ( sock_cln->read_msg(data) != strlen( TEST_DATA ) ) ||
@@ -336,10 +479,12 @@ DWORD __stdcall sock_serv_test( LPVOID lpParameter )
                "error read in result client" << endl;
      }
      delete sock_cln;
-#ifndef WIN32
-     atomic_inc( &must_terminate );
-#endif //WIN32
+#ifdef WIN32
      return 0;
+#else // WIN32
+     must_terminate++;
+     return NULL;
+#endif //WIN32
 }
 
 int main()
@@ -390,23 +535,24 @@ int main()
                SOCKET_TEST_INIT;
 #endif // WIN32
                //HL7Socket sock( "test.qa", "101" );
-               size_t len;
                std::string test_msg;
 
                // test send OK
-               TEST_SOCKED_SEND( HL7Socket, TEST_SOCKET, "test |&^", "", false,
-                                             send_msg, COMPARE_OK, "OK", "" );
+               if ( !testHL7SocketSend( TEST_SOCKET, "test |&^",
+                                                       false, true, "" ) )
+                    bOk = false;
                // send error - sended data len less then required
-               TEST_SOCKED_SEND( HL7Socket, TEST_SOCKET, "test message|&^", "", 
-                                        true, send_msg, COMPARE_ERROR, "ERROR", 
-                                        "invalid received length" );
+               if ( !testHL7SocketSend( TEST_SOCKET, "test message|&^",
+                                   true, false, "invalid received length" ) )
+                    bOk = false;
                // error - using invalid socket
-               TEST_SOCKET_ERROR( HL7Socket, ERROR_TEST_SOCKET, "test |&^", "",
-                    send_msg, TEST_MISS_ERROR, "invalid socket processing" );
+               if ( !testHL7SocketErrorSend( ERROR_TEST_SOCKET, "test |&^", "", 
+                              TEST_MISS_ERROR, "invalid socket processing" ) )
+                    bOk = false;
                // error - using uninited socket
-               TEST_SOCKET_ERROR( HL7Socket, ERROR_SOCKET_NOT_INITED, 
-                    "test |&^", "", send_msg, TEST_MISS_ERROR, 
-                    "uninited socket processing" );
+               if ( !testHL7SocketErrorSend( ERROR_SOCKET_NOT_INITED, "test |&^", "",
+                              TEST_MISS_ERROR, "uninited socket processing" ) )
+                    bOk = false;
 #ifdef WIN32
                SOCKET_TEST_FINISH;
 #endif // WIN32
@@ -415,44 +561,48 @@ int main()
 #ifdef WIN32
                SOCKET_TEST_INIT;
 #endif // WIN32
-               //HL7Socket sock( "test.qa", "101" );
-               size_t len;
                std::string test_msg;
                std::string long_test;
                COMPLEATE_LONG_STRING( long_test, 11, 
                     "test long text parsing\t|&^//lxhbls 04un8 ;jfu84m ?" );
 
                // read OK 1 cicle
-               TEST_SOCKED_SEND( HL7Socket, TEST_SOCKET, "", "test |&^", false,
-                              read_msg, COMPARE_OK_RCV( "test |&^" ), "OK", 
-                              "read in one cicle" );
+               if ( !testHL7SocketRecv( TEST_SOCKET, "test |&^", 
+                                        false, true, "read in one cicle" ) )
+                    bOk = false;
                // read OK more then 1 cicle
-               TEST_SOCKED_SEND( HL7Socket, TEST_SOCKET, "", long_test.c_str(), 
-                    false, read_msg, COMPARE_OK_RCV( long_test.c_str() ), 
-                    "OK", "read in more then one cicle" );
+               if ( !testHL7SocketRecv( TEST_SOCKET, 
+                                        (char*)long_test.c_str(), false, true, 
+                                        "read in more then one cicle" ) )
+                    bOk = false;
                // error read not full
-               TEST_SOCKED_SEND( HL7Socket, TEST_SOCKET, "", long_test.c_str(), 
-                    true, read_msg, COMPARE_ERROR_RCV( long_test.c_str() ), 
-                    "OK", "partial read" );
+               if ( !testHL7SocketRecv( TEST_SOCKET, 
+                    (char*)long_test.c_str(), true, false, "partial read" ) )
+                    bOk = false;
                // error - using invalid socket
-               TEST_SOCKET_ERROR( HL7Socket, ERROR_TEST_SOCKET, "", "test |&^",
-                    read_msg, TEST_MISS_ERROR, "invalid socket processing" );
+               if ( !testHL7SocketErrorRecv( ERROR_TEST_SOCKET, "", "test |&^",
+                              TEST_MISS_ERROR, "invalid socket processing" ) )
+                    bOk = false;
                // error - using uninited socket
-               TEST_SOCKET_ERROR( HL7Socket, ERROR_SOCKET_NOT_INITED, "", 
-                                   "test |&^", read_msg, TEST_MISS_ERROR, 
-                                   "uninited socket processing" );
+               if ( !testHL7SocketErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                              "test |&^", TEST_MISS_ERROR, 
+                              "uninited socket processing" ) )
+                    bOk = false;
                // error first ioctl
-               TEST_SOCKET_ERROR( HL7Socket, ERROR_SOCKET_NOT_INITED, "",
-                    long_test.c_str(), read_msg, TEST_IOCTL_ERROR,
-                    "failed first ioctl" );
+               if ( !testHL7SocketErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                              (char*)long_test.c_str(), TEST_IOCTL_ERROR,
+                              "failed first ioctl" ) )
+                    bOk = false;
                // error second ioctl
-               TEST_SOCKET_ERROR( HL7Socket, ERROR_SOCKET_NOT_INITED, "",
-                    long_test.c_str(), read_msg, TEST_SECOND_IOCTL_ERROR, 
-                    "failed second ioctl" );
+               if ( !testHL7SocketErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                              (char*)long_test.c_str(), TEST_SECOND_IOCTL_ERROR,
+                              "failed second ioctl" ) )
+                    bOk = false;
                // error second read
-               TEST_SOCKET_ERROR( HL7Socket, ERROR_SOCKET_NOT_INITED, "",
-                    long_test.c_str(), read_msg, TEST_SECOND_READ_ERROR, 
-                    "failed second read" );
+               if ( !testHL7SocketErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                              (char*)long_test.c_str(), TEST_SECOND_READ_ERROR,
+                              "failed second read" ) )
+                    bOk = false;
 
 #ifdef WIN32
                SOCKET_TEST_FINISH;
@@ -460,15 +610,6 @@ int main()
           }
      TEST_END( "HL7Socket" );
      TEST_START( "HL7SocketServer" );
-          //{ // HL7SocketServer::HL7SocketServer test
-          //     HL7SocketServer sock( -2 ); // error - unknown port
-          //     if ( sock.sockfd != ERROR_SOCKET_NOT_INITED )
-          //     {
-          //          bOk = false;
-          //          cout << "FAIL ERROR test for HL7SocketServer creation for" \
-          //               " nonexistent port = 0" << endl;
-          //     }
-          //}
           { // HL7SocketServer::HL7SocketServer test
                TEST_PARAM test_param;
                error_test_level = TEST_REAL_FUNCTIONS;
@@ -486,9 +627,7 @@ int main()
                }
 #else // WIN32
                pthread_t threadID;
-               if ( pthread_create( &threadID, NULL, 
-                                             sock_serv_test, &test_param );
-               if ( ( hand == -1 ) || ( !hand ) )
+               if ( 0 != pthread_create( &threadID, NULL, sock_serv_test, &test_param ) )
                {
                     bOk = false;
                     cout << "FAIL ERROR test for HL7SocketServer creation " \
@@ -503,7 +642,7 @@ int main()
                          if ( WaitForSingleObject( (HANDLE)hand, 100 ) ==
                                                             WAIT_OBJECT_0 )
 #else // WIN32
-                         if ( atomic_read( &must_terminate ) != 0 )
+                         if ( must_terminate != 0 )
 #endif // WIN32
                               break;
 #ifndef WIN32
@@ -514,8 +653,13 @@ int main()
                     {
                          bool type = false;
                          int len = sizeof( bool );
-                         if ( 0 != getsockopt( test_param.s, SOL_SOCKET, 
-                                        SO_ACCEPTCONN, (char*)&type, &len ) )
+#ifdef WIN32
+                         if ( 0 != getsockopt( test_param.s, SOL_SOCKET,
+                              SO_ACCEPTCONN, (char*)&type, &len ) )
+#else // WIN32
+                         if ( 0 != getsockopt( test_param.s, SOL_SOCKET,
+                              SO_ACCEPTCONN, (char*)&type, (unsigned int*)&len ) )
+#endif // WIN32
                          {
                               bOk = false;
                               cout << "FAIL OK test for HL7SocketServer creation"\
@@ -541,7 +685,7 @@ int main()
                          TerminateProcess( (HANDLE)hand, 0 );
 #else // WIN32
                     sleep(3);
-                    if ( atomic_read( &must_terminate ) == 0 )
+                    if ( must_terminate == 0 )
                          pthread_cancel( threadID );
 #endif // WIN32
                     if ( !test_param.bInited )
@@ -591,25 +735,24 @@ int main()
 #ifdef WIN32
                SOCKET_TEST_INIT;
 #endif // WIN32
-               //HL7MLLP sock( "test.qa", "101" );
-               size_t len;
                std::string test_msg;
 
                // test send OK
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "test |&^", "", false,
-                    send_msg_mllp, COMPARE_MLLP_OK, "OK", "" );
+               if ( !testHL7MLLPSend( TEST_SOCKET, "test |&^", "",
+                                                       false, true, "" ) )
+                    bOk = false;
                // send error - sended data len less then required
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "test message|&^", "", 
-                    true, send_msg_mllp, COMPARE_MLLP_ERROR, "ERROR",
-                    "invalid received length" );
+               if ( !testHL7MLLPSend( TEST_SOCKET, "test message|&^", "",
+                    true, false, "invalid received length" ) )
+                    bOk = false;
                // error - using invalid socket
-               TEST_SOCKET_ERROR( HL7MLLP, ERROR_TEST_SOCKET, "test |&^", "",
-                    send_msg_mllp, TEST_MISS_ERROR, 
-                    "invalid socket processing" );
+               if ( !testHL7MLLPErrorSend( ERROR_TEST_SOCKET, "test |&^", "", 
+                              TEST_MISS_ERROR, "invalid socket processing" ) )
+                    bOk = false;
                // error - using uninited socket
-               TEST_SOCKET_ERROR( HL7MLLP, ERROR_SOCKET_NOT_INITED, 
-                    "test |&^", "", send_msg_mllp, TEST_MISS_ERROR, 
-                    "uninited socket processing" );
+               if ( !testHL7MLLPErrorSend( ERROR_SOCKET_NOT_INITED, "test |&^", "",
+                              TEST_MISS_ERROR, "uninited socket processing" ) )
+                    bOk = false;
 #ifdef WIN32
                SOCKET_TEST_FINISH;
 #endif // WIN32
@@ -619,7 +762,7 @@ int main()
                SOCKET_TEST_INIT;
 #endif // WIN32
                HL7MLLP sock( "test.qa", "101" );
-               size_t len;
+               //size_t len;
                std::string test_msg;
                std::string short_test = "MSH|^~\\&|system1|W|system2|UHN|\
                               200105231927||ADT^A01^ADT_A01|22139243|P|2.4\t";
@@ -658,60 +801,65 @@ int main()
 
                
                // read OK 1 cicle
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "", short_test_buffer, 
-                    false, read_msg_mllp, 
-                    COMPARE_OK_MMLP_RCV( short_test.c_str() ), 
-                    "OK", "read in one cicle" );
+               if ( !testHL7MLLPRecv( TEST_SOCKET, short_test_buffer, 
+                                   (char*)short_test.c_str(), false, true, 
+                                   "read in one cicle" ) )
+                    bOk = false;
                // read OK more then 1 cicle
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "", long_test_buffer, 
-                    false, read_msg_mllp, 
-                    COMPARE_OK_MMLP_RCV( long_test.c_str() ),
-                    "OK", "read in more then one cicle" );
+               if ( !testHL7MLLPRecv( TEST_SOCKET, long_test_buffer,
+                                   (char*)long_test.c_str(), false, true,
+                                   "read in more then one cicle" ) )
+                    bOk = false;
                // more then 1 read OK 1 cicle
                error_test_level = TEST_DOUBLE_RECEIVE;
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "", short_test_buffer, 
-                    false, read_msg_mllp, 
-                    COMPARE_OK_MMLP_RCV( short_test.c_str() ), 
-                    "OK", "read in one cicle" );
+               if ( !testHL7MLLPRecv( TEST_SOCKET, short_test_buffer,
+                                   (char*)short_test.c_str(), false, true,
+                                   "double read in one cicle" ) )
+                    bOk = false;
                // more then 1 read OK more then 1 cicle
                error_test_level = TEST_DOUBLE_RECEIVE;
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "", long_test_buffer, 
-                    false, read_msg_mllp, 
-                    COMPARE_OK_MMLP_RCV( long_test.c_str() ),
-                    "OK", "read in more then one cicle" );
+               if ( !testHL7MLLPRecv( TEST_SOCKET, long_test_buffer,
+                                   (char*)long_test.c_str(), false, true,
+                                   "double read in more then one cicle" ) )
+                    bOk = false;
                // error read not full
                error_test_level = TEST_MISS_ERROR;
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "", long_test_buffer, 
-                    true, read_msg_mllp, 
-                    COMPARE_ERROR_MLLP_RCV( long_test ), "OK", 
-                    "partial read" );
+               if ( !testHL7MLLPRecv( TEST_SOCKET, long_test_buffer,
+                                   (char*)long_test.c_str(), true, false,
+                                   "partial read" ) )
+                    bOk = false;
                // error more then 1 read not full
                error_test_level = TEST_DOUBLE_RECEIVE;
-               TEST_SOCKED_SEND( HL7MLLP, TEST_SOCKET, "", long_test_buffer, 
-                    true, read_msg_mllp, 
-                    COMPARE_ERROR_MLLP_RCV( long_test ), "OK", 
-                    "partial read" );
+               if ( !testHL7MLLPRecv( TEST_SOCKET, long_test_buffer,
+                                   (char*)long_test.c_str(), true, false,
+                                   "partial read" ) )
+                    bOk = false;
                // error - using invalid socket
                error_test_level = TEST_MISS_ERROR;
-               TEST_SOCKET_ERROR( HL7MLLP, ERROR_TEST_SOCKET, "", 
-                    short_test_buffer, read_msg_mllp, TEST_MISS_ERROR, 
-                    "invalid socket processing" );
+               if ( !testHL7MLLPErrorRecv( ERROR_TEST_SOCKET, "",
+                                   short_test_buffer, TEST_MISS_ERROR, 
+                                   "invalid socket processing" ) )
+                    bOk = false;
                // error - using uninited socket
-               TEST_SOCKET_ERROR( HL7MLLP, ERROR_SOCKET_NOT_INITED, "", 
-                    short_test_buffer, read_msg_mllp, TEST_MISS_ERROR, 
-                    "uninited socket processing" );
+               if ( !testHL7MLLPErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                                   short_test_buffer, TEST_MISS_ERROR,
+                                   "uninited socket processing" ) )
+                    bOk = false;
                // error first ioctl
-               TEST_SOCKET_ERROR( HL7MLLP, ERROR_SOCKET_NOT_INITED, "",
-                    long_test_buffer, read_msg_mllp, TEST_IOCTL_ERROR,
-                    "failed first ioctl" );
+               if ( !testHL7MLLPErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                                   long_test_buffer, TEST_IOCTL_ERROR,
+                                   "failed first ioctl" ) )
+                    bOk = false;
                // error second ioctl
-               TEST_SOCKET_ERROR( HL7MLLP, ERROR_SOCKET_NOT_INITED, "",
-                    long_test_buffer, read_msg_mllp, TEST_SECOND_IOCTL_ERROR,
-                    "failed second ioctl" );
+               if ( !testHL7MLLPErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                                   long_test_buffer, TEST_SECOND_IOCTL_ERROR,
+                                   "failed second ioctl" ) )
+                    bOk = false;
                // error second read
-               TEST_SOCKET_ERROR( HL7MLLP, ERROR_SOCKET_NOT_INITED, "",
-                    long_test_buffer, read_msg_mllp, TEST_SECOND_READ_ERROR,
-                    "failed second read" );
+               if ( !testHL7MLLPErrorRecv( ERROR_SOCKET_NOT_INITED, "",
+                                   long_test_buffer, TEST_SECOND_READ_ERROR,
+                                   "failed second read" ) )
+                    bOk = false;
 
 #ifdef WIN32
                SOCKET_TEST_FINISH;
