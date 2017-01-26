@@ -79,7 +79,6 @@
     <ClInclude Include="..\..\common\HL7Object.h" />
     <ClInclude Include="..\..\common\hl7socket.h" />
     <ClInclude Include="..\..\common\ObjToPipe.h" />
-    <ClInclude Include="..\..\common\simple.h" />
     <ClInclude Include="..\..\common\util.h" />
     <ClInclude Include="..\..\common\validation.h" />
     <ClInclude Include="..\datatype\AD.h" />
