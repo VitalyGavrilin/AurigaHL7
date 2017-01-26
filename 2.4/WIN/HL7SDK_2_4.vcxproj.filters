@@ -1,0 +1,1724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\common\dataencode.cpp" />
+    <ClCompile Include="..\..\common\HL7Object.cpp" />
+    <ClCompile Include="..\..\common\ObjToPipe.cpp" />
+    <ClCompile Include="..\..\common\util.cpp" />
+    <ClCompile Include="..\..\common\validation.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\dataencode.h" />
+    <ClInclude Include="..\..\common\HL7Exception.h" />
+    <ClInclude Include="..\..\common\hl7mllp.h" />
+    <ClInclude Include="..\..\common\HL7Object.h" />
+    <ClInclude Include="..\..\common\hl7socket.h" />
+    <ClInclude Include="..\..\common\ObjToPipe.h" />
+    <ClInclude Include="..\..\common\util.h" />
+    <ClInclude Include="..\..\common\validation.h" />
+    <ClInclude Include="..\message\ACK.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ACK_N02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADR_A19.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A15.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A16.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A17.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A18.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A20.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A21.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A24.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A30.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A37.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A38.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A39.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A43.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A45.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A50.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A52.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A54.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A60.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ADT_A61.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\BAR_P01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\BAR_P02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\BAR_P05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\BAR_P06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\BAR_P10.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\AD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\AUI.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CCD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CCP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0002.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0005.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0006.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0048.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0049.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0050.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0051.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0055.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0059.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0063.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0066.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0069.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0070.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0072.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0083.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0088.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0114.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0118.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0127.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0128.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0129.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0131.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0132.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0136.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0160.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0162.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0163.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0164.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0165.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0171.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0172.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0175.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0181.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0184.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0185.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0189.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0212.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0215.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0218.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0222.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0227.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0233.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0247.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0254.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0255.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0258.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0259.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0264.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0265.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0276.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0277.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0278.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0280.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0281.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0282.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0283.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0284.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0285.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0286.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0292.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0293.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0296.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0324.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0325.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0336.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0339.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0340.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0341.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0342.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0343.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0344.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0345.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0346.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0347.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0348.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0349.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0351.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0357.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0358.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0364.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0365.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0366.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0367.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0368.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0369.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0370.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0371.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0373.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0374.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0375.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0376.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0377.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0378.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0379.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0380.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0381.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0382.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0383.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0384.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0385.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0386.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0387.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0388.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0389.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0393.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0394.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0401.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0402.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0403.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0404.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0405.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0406.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0411.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0412.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0413.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0414.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0417.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0421.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0422.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0423.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0424.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0425.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0426.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0427.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0428.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0429.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0430.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0431.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0432.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0433.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0434.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0435.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0436.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0437.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0438.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0443.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0446.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0447.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0450.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0451.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0452.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0453.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0454.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0461.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0462.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0463.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0464.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0466.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0471.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CE_0474.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CF.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CK.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CNE.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CNN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CQ.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ABS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ACC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ADD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\AFF.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\AIG.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\AIL.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\AIP.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\AIS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\AL1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\APR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ARQ.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\AUT.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\BHS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\BLC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\BLG.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\BTS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CDM.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CM0.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CM1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CM2.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CNS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CSP.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CSR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CSS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CTD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\CTI.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\DB1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\DG1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\DRG.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\DSC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\DSP.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\CRM_C01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\CSU_C09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\DFT_P03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\DFT_P11.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\DOC_T12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\DSR_P04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\DSR_Q01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\DSR_Q03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\EAC_U07.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\EAN_U09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\EAR_U08.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\EDR_R07.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\EQQ_Q04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ERP_R09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CSU.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CWE.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\CX.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DDI.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DIN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DLD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DLN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DLT.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DR.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DT.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\DTN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\ED.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\EI.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\EIP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\ELD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\FC.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\FN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\FT.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ESR_U02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ESU_U01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ECD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ECR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\EDU.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\EQL.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\EQP.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\EQU.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ERQ.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ERR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\EVN.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\FAC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\FHS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\FT1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\FTS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\GOL.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\GP1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\GP2.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\GT1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\Hxx.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\IAM.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\IN1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\IN2.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\IN3.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\INV.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ISD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\LAN.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\LCC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\LCH.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\LDP.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\HD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\ID.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\IS.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\JCC.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\LA1.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\LA2.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\MA.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\INR_U06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\INU_U05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MDM_T01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MDM_T02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFK_M01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M07.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M08.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\LSU_U12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M11.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M10.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFN_M12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFQ_M01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\MFR_M01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\MO.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\MOC.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\MOP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\MSG.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\NA.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\NDL.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\NM.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\LOC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\LRL.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\MFA.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\MFE.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\MFI.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\MRG.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\MSA.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\MSH.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\NCK.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\NDS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\NK1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\NPU.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\NSC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\NST.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\NTE.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\NMD_N02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\NMQ_N01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\NMR_N01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OMD_O03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OBR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OBX.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ODS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ODT.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OM1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OM2.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OM3.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OM4.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OM5.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OM6.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\OM7.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OMG_O19.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OML_O21.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OMN_O07.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OMP_O09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OMS_O05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORD_O04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORF_R04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORG_O20.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORL_O22.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORM_O01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORN_O08.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORP_O10.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORR_O02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORS_O06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ORU_R01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OSQ_Q06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OSR_Q06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\OUL_R21.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\NR.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\OCD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\OSD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\OSP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PCF.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PI.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ORC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ORG.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PCR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PD1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PDA.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PDC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PEO.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PES.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PID.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PEX_P07.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PGL_PC6.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PMU_B01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PMU_B03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PMU_B04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PPG_PCG.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PPP_PCB.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PPR_PC1.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PPT_PCL.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PPV_PCA.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PIP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PL.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PLN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PPN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PRL.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PT.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\PTA.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PR1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PRA.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PRB.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PRC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PRD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PSH.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PTH.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PV1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\PV2.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\QAK.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PRR_PC5.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\PTR_PCF.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QBP_K13.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QBP_Q11.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QBP_Q13.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QBP_Q15.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QBP_Q21.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QBP_Qnn.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QBP_Z73.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QCK_Q02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QCN_J01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QRY_A19.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QRY_P04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QRY_PC4.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QRY_Q01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QRY_Q02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QRY_R02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QRY_T12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QSB_Q16.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\QVR_Q17.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RAR_RAR.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RAS_O17.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RCI_I05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RCL_I06.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RDE_O11.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RDR_RDR.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RDS_O13.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\QID.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\QPD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\QRD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\QRF.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\QRI.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RCP.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RDF.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RDT.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RF1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RGS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RMI.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ROL.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\QIP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\QSC.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\RCD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\RFR.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\RI.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\RMC.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\RP.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RDY_K15.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\REF_I12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RER_RER.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RGR_RGR.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RGV_O15.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\ROR_ROR.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RPA_I08.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RPI_I01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RPI_I04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RPL_I02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RPR_I03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RQA_I08.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RQC_I05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RQI_I01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RQP_I04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RQQ_Q09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RRA_O18.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RRD_O14.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RRE_O12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RRG_O16.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RRI_I12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K11.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K13.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K15.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K21.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K22.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K23.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K24.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_K25.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_Z82.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_Z86.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_Z88.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RSP_Z90.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RTB_K13.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RTB_Knn.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RTB_Q13.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\RTB_Z74.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RQ1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RQD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RXA.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RXC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RXD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RXE.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RXG.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RXO.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\RXR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\SAC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\SCH.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\SID.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SIU_S12.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SPQ_Q08.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SQM_S25.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SQR_S25.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SRM_S01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SRR_S01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SSR_U04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SSU_U03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\SAD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\SCV.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\SI.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\SN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\SPD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\SPS.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\SRT.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\ST.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\TM.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\SUR_P09.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\TBR_R08.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\TCU_U10.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\UDM_Q05.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\TN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\TQ.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\TS.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\TX.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\TX_CHALLENGE.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\UVC.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\SPR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\STF.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\TCC.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\TCD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\TXA.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\UB1.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\UB2.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\URD.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\URS.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\VAR.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\VTQ.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\VQQ_Q07.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\VXQ_V01.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\VXR_V03.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\VXU_V04.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\message\VXX_V02.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\varies.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\VH.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\VID.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\VR.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\WVI.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\WVS.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\XAD.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\XCN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\XON.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\XPN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\datatype\XTN.h">
+      <Filter>datatype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\ZL7.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\segment\Zxx.h">
+      <Filter>segment</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="message">
+      <UniqueIdentifier>{72b5068b-449a-410a-bb9f-5dba7fa12965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="datatype">
+      <UniqueIdentifier>{09a53894-478d-4a0d-b4bb-7fb12675cc2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="segment">
+      <UniqueIdentifier>{38c695ae-e63a-4962-b42d-cf695300a3cf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
