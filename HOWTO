@@ -1,3 +1,9 @@
+COMPILATION for Windows:
+To compile examples, you can use solution file in examples/WIN directory.
+To compile tests, you can use solution file in tests/WIN directory.
+To compile SDK library, add static library project from 2.4/WIN directory to your solution.
+If you use HL7MLLP object, you should place include hl7mllp.h header first.
+
 HOWTO:
 The following examle shows how to use the library.
 
