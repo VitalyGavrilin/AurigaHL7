@@ -1,0 +1,20 @@
+# Dependency files
+*.M
+
+# Object files
+*.o
+
+# Static libraries
+*.a
+
+# Shared libraries
+*.so
+
+# Backup files
+*~
+
+# Binary files
+common/try-link
+examples/hello/hello
+examples/client/client
+examples/server/server
