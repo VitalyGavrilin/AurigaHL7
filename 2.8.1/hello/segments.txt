@@ -144,8 +144,8 @@ PYE  - Payee Information
 QAK  - Query Acknowledgment
 QID  - Query Identification
 QPD  - Query Parameter Definition
-QRD  - QRD Undefined
-QRF  - QRF Undefined
+QRD  - Original-Style Query Definition
+QRF  - Original Style Query Filter
 QRI  - Query Response Instance
 RCP  - Response Control Parameter
 RDF  - Table Row Definition
@@ -186,8 +186,8 @@ TQ1  - Timing/Quantity
 TQ2  - Timing/Quantity Relationship
 TXA  - Transcription Document Header
 UAC  - User Authentication Credential Segment
-UB1  - Uniform Billing Data 1 
+UB1  - Uniform Billing Data 1 UB82
 UB2  - Uniform Billing Data
-URD  - URD Undefined
+URD  - Results/update Definition
 VAR  - Variance
 VND  - Purchasing Vendor

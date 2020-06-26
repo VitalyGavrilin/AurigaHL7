@@ -1,0 +1,99 @@
+#
+# hacca - C Toolkit and Applications for the HL7 2.x Protocols
+#         https://github.com/rcarbone/hacca
+#
+# This file was automatically generated, please do not edit.
+#
+# R. Carbone (rocco@tecsiel.it)
+# Jun 2020
+#
+# SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+#
+# Id - Description
+#
+AD  - address
+AUI - authorization information
+CCD - charge time
+CCP - channel calibration parameters
+CD  - channel definition
+CE  - coded element
+CF  - coded element with formatted values
+CK  - composite ID with check digit
+CN  - composite ID number and name
+CNE - coded with no exceptions
+CNN - composite ID number and name (special DT for NDL)
+CP  - composite price
+CQ  - composite quantity with units
+CSU - channel sensitivity/units
+CWE - coded with exceptions
+CX  - extended composite ID with check digit
+DDI - daily deductible
+DIN - activation date
+DLD - discharge location
+DLN - driver's license number
+DLT - delta check
+DR  - date/time range
+DTN - Day Type and Number
+ED  - encapsulated data
+EI  - entity identifier
+EIP - parent order
+ELD - error
+FC  - financial class
+FN  - familiy name
+FT  - formatted text data
+HD  - hierarchic designator
+JCC - job code/class
+LA1 - Location with address information (variant 1)
+LA2 - Location with address information (variant 2)
+MA  - multiplexed array
+MO  - money
+MOC - Charge To Practise
+MOP - money or percentage
+MSG - Message Type
+NA  - numeric array
+NDL - observing practitioner
+NM  - numeric
+NR  - Wertebereich
+OCD - occurence
+OSD - order sequence
+OSP - occurence span
+PCF - Pre-certification required
+PI  - person identifier
+PIP - Privileges
+PL  - person location
+PLN - Practitioner ID Numbers
+PN  - person name
+PPN - performing person time stamp
+PRL - parent result link
+PT  - processing type
+PTA - Policy Type
+QIP - query input parameter list
+QSC - query selection criteria
+RCD - row column definition
+RFR - reference range
+RI  - repeat interval
+RMC - Room Coverage
+RP  - reference pointer
+SAD - street address
+SCV - scheduling class value pair
+SI  - sequence ID
+SN  - structured numeric
+SPD - Specialty
+SPS - specimen source
+SRT - sort order
+ST  - string data
+TN  - telephone number
+TQ  - timing quantity
+TS  - time stamp
+TX  - text data
+UVC - Value code and amount
+VH  - visiting hours
+VID - version identifier
+VR  - value qualifier
+WVI - channel identifier
+WVS - waveform source
+XAD - extended address
+XCN - extended composite ID number and name for persons
+XON - extended composite name and identification number for organizations
+XPN - extended person name
+XTN - extended telecommunication number
