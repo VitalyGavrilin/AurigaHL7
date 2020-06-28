@@ -7,13 +7,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 DESCRIPTION:
-This document descibes the Auriga HL7 library which implements HL7
+This document describes the Auriga HL7 library which implements HL7
 structures of the version 2.x (version 2.4 by default, please see www.hl7.org). 
-The library uses C++ 0x standards; the compiller should support them to use this
+The library uses C++ 0x standards; the compiler should support them to use this
 library. The howto section is placed in the end of this document. The library 
 provides implementation of the following features:
 - HL7 Structures of the version 2.x (2.4 by default)
-- Conversion the HL7 stuctures to the HL7 string (pipe).
+- Conversion the HL7 structures to the HL7 string (pipe).
 - Conversion a pipe string into HL7 structure.
 - Encoding / decoding / validating HL7 types
 - MLLP HL7 protocol support
@@ -32,9 +32,9 @@ The source code of the library has the following structures:
     `-- thirdparty
 
 - src - this is the top directory.
-- 2.4 - this directory contains descriptio of the HL7 structures of the 2.4 version.
+- 2.4 - this directory contains description of the HL7 structures of the 2.4 version.
 - datatype - HL7 data types
-- mesage - HL7 messages
+- message - HL7 messages
 - segment - HL7 segments
 - 2.4 / WIN - static library project for Windows
 - common - it contains common code: base classes and utils that are not used thirdparty code base.
@@ -50,7 +50,7 @@ The source code of the library has the following structures:
 	WIN - examples compilation solution for Windows
 - thirdparty - thirdparty code.
 
-The source code is provided as an Eclipse and MS VS 2013 projects which inclde these
+The source code is provided as an Eclipse and MS VS 2013 projects which include these
 directories. The projects run test applications.
 
-Please see HOWTO file for build inctructions and example usage.
+Please see HOWTO file for build instructions and example usage.
