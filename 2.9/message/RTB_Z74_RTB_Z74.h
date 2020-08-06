@@ -1,0 +1,178 @@
+/*
+ * hacca - C Toolkit and Applications for the HL7 2.x Protocols
+ *           http://github.com/rcarbone/hacca
+ *           http://hub.docker.com/repository/docker/roccocarbone/hacca
+ *
+ * Warning: This file was automatically generated, please do not edit.
+ *
+ * R. Carbone (rocco@tecsiel.it)
+ * Jul 2020
+ *
+ * SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+ */
+
+
+#ifndef __RTB_Z74_RTB_Z74__29_H__
+#define __RTB_Z74_RTB_Z74__29_H__
+
+#include "../../common/Util.h"
+#include "../segment/DSC.h"
+#include "../segment/ERR.h"
+#include "../segment/MSA.h"
+#include "../segment/MSH.h"
+#include "../segment/QAK.h"
+#include "../segment/QPD.h"
+#include "../segment/RDF.h"
+#include "../segment/RDT.h"
+#include "../segment/SFT.h"
+#include "../segment/UAC.h"
+
+namespace HL7_29 {
+
+/* Internal structures/groups */
+struct RTB_Z74_RTB_Z74_ROW_DEFINITION; /* ROW_DEFINITION */
+
+/*  */
+struct RTB_Z74_RTB_Z74 : public HL7Message {
+  RTB_Z74_RTB_Z74() { this->init(); }
+  /* Fields ID  */
+  enum FIELD_ID {
+    RTB_Z74_RTB_Z74_MSH_1,
+    RTB_Z74_RTB_Z74_MSA_2,
+    RTB_Z74_RTB_Z74_ERR_3,
+    RTB_Z74_RTB_Z74_SFT_4,
+    RTB_Z74_RTB_Z74_UAC_5,
+    RTB_Z74_RTB_Z74_QAK_6,
+    RTB_Z74_RTB_Z74_QPD_7,
+    RTB_Z74_RTB_Z74_DSC_9,
+    RTB_Z74_RTB_Z74_RDF_10,
+    RTB_Z74_RTB_Z74_RDT_11,
+    FIELD_ID_MAX
+  };
+
+  const char* className() const { return "RTB_Z74_RTB_Z74"; }
+  RTB_Z74_RTB_Z74* create() const { return new RTB_Z74_RTB_Z74(); }
+
+ private:
+  /* Initialize object */
+  void init() {
+    setName("RTB_Z74_RTB_Z74");
+    addObject<MSH>(RTB_Z74_RTB_Z74_MSH_1, "MSH.1", HL7::initialized, HL7::repetition_off);
+    addObject<MSA>(RTB_Z74_RTB_Z74_MSA_2, "MSA.2", HL7::initialized, HL7::repetition_off);
+    addObject<ERR>(RTB_Z74_RTB_Z74_ERR_3, "ERR.3", HL7::optional, HL7::repetition_on);
+    addObject<SFT>(RTB_Z74_RTB_Z74_SFT_4, "SFT.4", HL7::optional, HL7::repetition_on);
+    addObject<UAC>(RTB_Z74_RTB_Z74_UAC_5, "UAC.5", HL7::optional, HL7::repetition_off);
+    addObject<QAK>(RTB_Z74_RTB_Z74_QAK_6, "QAK.6", HL7::initialized, HL7::repetition_off);
+    addObject<QPD>(RTB_Z74_RTB_Z74_QPD_7, "QPD.7", HL7::initialized, HL7::repetition_off);
+    addObject<DSC>(RTB_Z74_RTB_Z74_DSC_9, "DSC.9", HL7::optional, HL7::repetition_off);
+    addObject<RDF>(RTB_Z74_RTB_Z74_RDF_10, "RDF.10", HL7::initialized, HL7::repetition_off);
+    addObject<RDT>(RTB_Z74_RTB_Z74_RDT_11, "RDT.11", HL7::optional, HL7::repetition_on);
+  }
+
+ public:
+  /* Getters list */
+  MSH* getMSH_1(size_t index = 0) {
+    return (MSH*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_MSH_1);
+  }
+  MSA* getMSA_2(size_t index = 0) {
+    return (MSA*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_MSA_2);
+  }
+  ERR* getERR_3(size_t index = 0) {
+    return (ERR*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_ERR_3);
+  }
+  SFT* getSFT_4(size_t index = 0) {
+    return (SFT*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_SFT_4);
+  }
+  UAC* getUAC_5(size_t index = 0) {
+    return (UAC*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_UAC_5);
+  }
+  QAK* getQAK_6(size_t index = 0) {
+    return (QAK*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_QAK_6);
+  }
+  QPD* getQPD_7(size_t index = 0) {
+    return (QPD*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_QPD_7);
+  }
+  DSC* getDSC_9(size_t index = 0) {
+    return (DSC*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_DSC_9);
+  }
+  RDF* getRDF_10(size_t index = 0) {
+    return (RDF*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_RDF_10);
+  }
+  RDT* getRDT_11(size_t index = 0) {
+    return (RDT*)this->getObjectSafe(index, RTB_Z74_RTB_Z74_RDT_11);
+  }
+
+  /* Checker list */
+  bool isMSH_1(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_MSH_1) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isMSA_2(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_MSA_2) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isERR_3(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_ERR_3) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isSFT_4(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_SFT_4) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isUAC_5(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_UAC_5) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isQAK_6(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_QAK_6) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isQPD_7(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_QPD_7) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isDSC_9(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_DSC_9) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isRDF_10(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_RDF_10) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+  bool isRDT_11(size_t index = 0) {
+    try {
+      return this->getObject(index, RTB_Z74_RTB_Z74_RDT_11) != NULL;
+    } catch (...) {
+    }
+    return false;
+  }
+}; /* RTB_Z74_RTB_Z74_ */
+} /* namespace HL7_29 */
+#endif /*  __RTB_Z74_RTB_Z74__29_H__ */
