@@ -1,0 +1,193 @@
+#
+# hacca - C Toolkit for the HL7 Protocol
+#         https://github.com/rcarbone/hacca
+#
+# This file was automatically generated, please do not edit.
+#
+# R. Carbone (rocco@tecsiel.it)
+# Jun 2020
+#
+# SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+#
+# Id - Description
+#
+ABS  - Abstract
+ACC  - Accident
+ADD  - Addendum
+ADJ  - Adjustment
+AFF  - Professional Affiliation
+AIG  - Appointment Information - General Resource
+AIL  - Appointment Information - Location Resource
+AIP  - Appointment Information - Personnel Resource
+AIS  - Appointment Information
+AL1  - Patient Allergy Information
+APR  - Appointment Preferences
+ARQ  - Appointment Request
+ARV  - Access Restriction
+AUT  - Authorization Information
+BHS  - Batch Header
+BLC  - Blood Code
+BLG  - Billing
+BPO  - Blood product order
+BPX  - Blood product dispense status
+BTS  - Batch Trailer
+BTX  - Blood Product Transfusion/Disposition
+BUI  - Blood Unit Information
+CDM  - Charge Description Master
+CDO  - Cumulative Dosage
+CER  - Certificate Detail
+CM0  - Clinical Study Master
+CM1  - Clinical Study Phase Master
+CM2  - Clinical Study Schedule Master
+CNS  - Clear Notification
+CON_ - CON_ Undefined
+CSP  - Clinical Study Phase
+CSR  - Clinical Study Registration
+CSS  - Clinical Study Data Schedule Segment
+CTD  - Contact Data
+CTI  - Clinical Trial Identification
+DB1  - Disability
+DG1  - Diagnosis
+DMI  - DRG Master File Information
+DON  - Donation
+DRG  - Diagnosis Related Group
+DSC  - Continuation Pointer
+DSP  - Display Data
+ECD  - Equipment Command
+ECR  - Equipment Command Response
+EDU  - Educational Detail
+EQP  - Equipment/log Service
+EQU  - Equipment Detail
+ERR  - Error
+EVN  - Event Type
+FAC  - Facility
+FHS  - File Header
+FT1  - Financial Transaction
+FTS  - File Trailer
+GOL  - Goal Detail
+GP1  - Grouping/Reimbursement - Visit
+GP2  - Grouping/Reimbursement - Procedure Line Item
+GT1  - Guarantor
+Hxx  - any HL7 segment
+IAM  - Patient Adverse Reaction Information
+IAR  - Allergy Reaction
+IIM  - Inventory Item Master
+ILT  - Material Lot
+IN1  - Insurance
+IN2  - Insurance Additional Information
+IN3  - Insurance Additional Information, Certification
+INV  - Inventory Detail
+IPC  - Imaging Procedure Control Segment
+IPR  - Invoice Processing Results
+ISD  - Interaction Status Detail
+ITM  - Material Item
+IVC  - Invoice Segment
+IVT  - Material Location
+LAN  - Language Detail
+LCC  - Location Charge Code
+LCH  - Location Characteristic
+LDP  - Location Department
+LOC  - Location Identification
+LRL  - Location Relationship
+MFA  - Master File Acknowledgment
+MFE  - Master File Entry
+MFI  - Master File Identification
+MRG  - Merge Patient Information
+MSA  - Message Acknowledgment
+MSH  - Message Header
+NCK  - System Clock
+NDS  - Notification Detail
+NK1  - Next of Kin / Associated Parties
+NPU  - Bed Status Update
+NSC  - Application Status Change
+NST  - Application control level statistics
+NTE  - Notes and Comments
+OBR  - Observation Request
+OBX  - Observation/Result
+ODS  - Dietary Orders, Supplements, and Preferences
+ODT  - Diet Tray Instructions
+OM1  - General Segment
+OM2  - Numeric Observation
+OM3  - Categorical Service/Test/Observation
+OM4  - Observations that Require Specimens
+OM5  - Observation Batteries (Sets
+OM6  - Observations that are Calculated from Other Observations
+OM7  - Additional Basic Attributes
+ORC  - Common Order
+ORG  - Practitioner Organization Unit
+OVR  - Override Segment
+PAC  - Shipment Package
+PCE  - Patient Charge Cost Center Exceptions
+PCR  - Possible Causal Relationship
+PD1  - Patient Additional Demographic
+PDA  - Patient Death and Autopsy
+PDC  - Product Detail Country
+PEO  - Product Experience Observation
+PES  - Product Experience Sender
+PID  - Patient Identification
+PKG  - Item Packaging
+PMT  - Payment Information
+PR1  - Procedures
+PRA  - Practitioner Detail
+PRB  - Problem Details
+PRC  - Pricing
+PRD  - Provider Data
+PRT  - Participation Information
+PSG  - Product/Service Group
+PSH  - Product Summary Header
+PSL  - Product/Service Line Item
+PSS  - Product/Service Section
+PTH  - Pathway
+PV1  - Patient Visit
+PV2  - Patient Visit - Additional Information
+PYE  - Payee Information
+QAK  - Query Acknowledgment
+QID  - Query Identification
+QPD  - Query Parameter Definition
+QRD  - Original-Style Query Definition
+QRF  - Original Style Query Filter
+QRI  - Query Response Instance
+RCP  - Response Control Parameter
+RDF  - Table Row Definition
+RDT  - Table Row Data
+REL  - Clinical Relationship Segment
+RF1  - Referral Information
+RFI  - Request for Information
+RGS  - Resource Group
+RMI  - Risk Management Incident
+ROL  - Role
+RQ1  - Requisition Detail-1
+RQD  - Requisition Detail
+RXA  - Pharmacy/Treatment Administration
+RXC  - Pharmacy/Treatment Component Order
+RXD  - Pharmacy/Treatment Dispense
+RXE  - Pharmacy/Treatment Encoded Order
+RXG  - Pharmacy/Treatment Give
+RXO  - Pharmacy/Treatment Order
+RXR  - Pharmacy/Treatment Route
+RXV  - Pharmacy/Treatment Infusion
+SAC  - Specimen Container detail
+SCD  - Anti-Microbial Cycle Data
+SCH  - Scheduling Activity Information
+SCP  - Sterilizer Configuration (Anti-Microbial Devices
+SDD  - Sterilization Device Data
+SFT  - Software Segment
+SGH  - Segment Group Header
+SGT  - Segment Group Trailer
+SHP  - Shipment
+SID  - Substance Identifier
+SLT  - Sterilization Lot
+SPM  - Specimen
+STF  - Staff Identification
+STZ  - Sterilization Parameter
+TCC  - Test Code Configuration
+TCD  - Test Code Detail
+TQ1  - Timing/Quantity
+TQ2  - Timing/Quantity Relationship
+TXA  - Transcription Document Header
+UAC  - User Authentication Credential Segment
+UB1  - Uniform Billing Data 1 UB82
+UB2  - Uniform Billing Data
+URD  - Results/update Definition
+VAR  - Variance
+VND  - Purchasing Vendor

@@ -1,0 +1,89 @@
+#
+# hacca - C Toolkit for the HL7 Protocol
+#         https://github.com/rcarbone/hacca
+#
+# This file was automatically generated, please do not edit.
+#
+# R. Carbone (rocco@tecsiel.it)
+# Jun 2020
+#
+# SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+#
+# Id - Description
+#
+AD  - Address
+AUI - Authorization Information
+CCD - Charge Code and Date
+CCP - Channel Calibration Parameters
+CD  - Channel Definition
+CF  - Coded Element with Formatted Values
+CNE - Coded with No Exceptions
+CNN - Composite ID Number and Name Simplified
+CP  - Composite Price
+CQ  - Composite Quantity with Units
+CSU - Channel Sensitivity and Units
+CWE - Coded with Exceptions
+CX  - Extended Composite ID with Check Digit
+DDI - Daily Deductible Information
+DIN - Date and Institution Name
+DLD - Discharge to Location and Date
+DLN - Driver's License Number
+DLT - Delta
+DR  - Date/Time Range
+DTN - Day Type and Number
+ED  - Encapsulated Data
+EI  - Entity Identifier
+EIP - Entity Identifier Pair
+ERL - Error Location
+FC  - Financial Class
+FN  - Family Name
+FT  - Formatted Text Data
+GTS - General Timing Specification
+HD  - Hierarchic Designator
+ICD - Insurance Certification Definition
+JCC - Job Code/Class
+MA  - Multiplexed Array
+MO  - Money
+MOC - Money and Code
+MOP - Money or Percentage
+MSG - Message Type
+NA  - Numeric Array
+NDL - Name with Date and Location
+NM  - Numeric
+NR  - Numeric Range
+OCD - Occurrence Code and Date
+OSP - Occurrence Span Code and Date
+PIP - Practitioner Institutional Privileges
+PL  - Person Location
+PLN - Practitioner License or Other ID Number
+PPN - Performing Person Time Stamp
+PRL - Parent Result Link
+PT  - Processing Type
+PTA - Policy Type and Amount
+QIP - Query Input Parameter List
+QSC - Query Selection Criteria
+RCD - Row Column Definition
+RFR - Reference Range
+RI  - Repeat Interval
+RMC - Room Coverage
+RP  - Reference Pointer
+RPT - Repeat Pattern
+SAD - Street Address
+SCV - Scheduling Class Value Pair
+SI  - Sequence ID
+SN  - Structured Numeric
+SPD - Specialty Description
+SRT - Sort Order
+ST  - String Data
+TX  - Text Data
+UVC - UB Value Code and Amount
+VH  - Visiting Hours
+VID - Version Identifier
+VR  - Value Range
+WVI - Channel Identifier
+WVS - Waveform Source
+XAD - Extended Address
+XCN - Extended Composite ID Number and Name for Persons
+XON - Extended Composite Name and Identification Number for Organizations
+XPN - Extended Person Name
+XTN - Extended Telecommunication Number

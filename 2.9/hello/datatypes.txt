@@ -1,0 +1,99 @@
+#
+# hacca - C Toolkit and Applications for the HL7 2.x Protocols
+#           http://github.com/rcarbone/hacca
+#           http://hub.docker.com/repository/docker/roccocarbone/hacca
+#
+# Warning: This file was automatically generated, please do not edit.
+#
+# R. Carbone (rocco@tecsiel.it)
+# Jul 2020
+#
+# SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+#
+# This file lists all HL7 datatypes defined in the v2.9 HL7 Standard
+#
+# Id - Description
+#
+AD  - address
+AUI - authorization information
+CCD - charge code and date
+CCP - channel calibration parameters
+CD  - channel definition
+CF  - coded element with formatted values
+CNE - coded with no exceptions
+CNN - composite ID number and name simplified
+CP  - composite price
+CQ  - composite quantity with units
+CSU - channel sensitivity and units
+CWE - coded with exceptions
+CX  - extended composite ID with check digit
+DDI - daily deductible information
+DIN - date and institution name
+DLD - discharge to location and date
+DLN - driver's license number
+DLT - delta
+DR  - date/time range
+DT  - date
+DTM - date/time
+DTN - day type and number
+ED  - encapsulated data
+EI  - entity identifier
+EIP - entity identifier pair
+ERL - Message location
+FC  - financial class
+FN  - family name
+FT  - formatted text data
+GTS - general timing specification
+HD  - hierarchic designator
+ICD - insurance certification definition
+ID  - coded value for HL7 defined tables
+IS  - coded value for user-defined tables
+JCC - job code/class
+MA  - multiplexed array
+MO  - money
+MOC - money and charge code
+MOP - money or percentage
+MSG - message type
+NA  - numeric array
+NDL - name with date and location
+NM  - numeric
+NR  - numeric range
+OCD - occurrence code and date
+OG  - observation grouper
+OSP - occurrence span code and date
+PIP - practitioner institutional privileges
+PL  - person location
+PLN - practitioner license or other Id number
+PPN - performing person time stamp
+PRL - parent result link
+PT  - processing type
+PTA - policy type and amount
+QIP - query input parameter list
+QSC - query selection criteria
+RCD - row column definition
+RFR - reference range
+RI  - repeat interval
+RMC - room coverage
+RP  - reference pointer
+RPT - repeat pattern
+SAD - street address
+SCV - scheduling class value pair
+SI  - sequence ID
+SN  - structured numeric
+SNM - string of telephone number digits
+SPD - specialty description
+SRT - sort order
+ST  - string data
+TM  - time
+TX  - text data
+UVC - UB value code and amount
+VH  - visiting hours
+VID - version identifier
+VR  - value range
+WVI - channel identifier
+WVS - waveform source
+XAD - extended address
+XCN - extended composite ID number and name for persons
+XON - extended composite name and identification number for organizations
+XPN - extended person name
+XTN - extended telecommunication number

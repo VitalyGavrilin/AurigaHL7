@@ -1,0 +1,377 @@
+#
+# hacca - C Toolkit and Applications for the HL7 2.x Protocols
+#           http://github.com/rcarbone/hacca
+#           http://hub.docker.com/repository/docker/roccocarbone/hacca
+#
+# Warning: This file was automatically generated, please do not edit.
+#
+# R. Carbone (rocco@tecsiel.it)
+# Jul 2020
+#
+# SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+#
+# This file lists all HL7 messages defined in the v2.9 HL7 Standard
+#
+# CH02_Control.txt
+ACK: General Acknowledgment
+#
+# CH03_PatientAdmin.txt
+ADT^A01^ADT_A01: ADT Message
+ADT^A02^ADT_A02: ADT Message
+ADT^A03^ADT_A03: ADT Message
+ADT^A04^ADT_A01: ADT Message
+ADT^A05^ADT_A05: ADT Message
+ADT^A06^ADT_A06: ADT Message
+ADT^A07^ADT_A06: ADT Message
+ADT^A08^ADT_A01: ADT Message
+ADT^A09^ADT_A09: ADT Message
+ADT^A10^ADT_A09: ADT Message
+ADT^A11^ADT_A09: ADT Message
+ADT^A12^ADT_A12: ADT Message
+ADT^A13^ADT_A01: ADT Message
+ADT^A14^ADT_A05: ADT Message
+ADT^A15^ADT_A15: ADT Message
+ADT^A16^ADT_A16: ADT Message
+ADT^A17^ADT_A17: ADT Message
+ADT^A20^ADT_A20: ADT Message
+ADT^A21^ADT_A21: ADT Message
+ADT^A22^ADT_A21: ADT Message
+ADT^A23^ADT_A21: ADT Message
+ADT^A24^ADT_A24: ADT Message
+ADT^A25^ADT_A21: ADT Message
+ADT^A26^ADT_A21: ADT Message
+ADT^A27^ADT_A21: ADT Message
+ADT^A28^ADT_A05: ADT Message
+ADT^A29^ADT_A21: ADT Message
+ADT^A31^ADT_A05: ADT Message
+ADT^A32^ADT_A21: ADT Message
+ADT^A33^ADT_A21: ADT Message
+ADT^A37^ADT_A37: ADT Message
+ADT^A38^ADT_A38: ADT Message
+ADT^A40^ADT_A39: ADT Message
+ADT^A41^ADT_A39: ADT Message
+ADT^A42^ADT_A39: ADT Message
+ADT^A43^ADT_A43: ADT Message
+ADT^A44^ADT_A44: ADT Message
+ADT^A45^ADT_A45: ADT Message
+ADT^A47^ADT_A44: ADT Message
+ADT^A49^ADT_A43: ADT Message
+ADT^A50^ADT_A50: ADT Message
+ADT^A51^ADT_A50: ADT Message
+ADT^A52^ADT_A52: ADT Message
+ADT^A53^ADT_A52: ADT Message
+ADT^A54^ADT_A54: ADT Message
+ADT^A55^ADT_A54: ADT Message
+QBP^Q21^QBP_Q21: Query By Parameter
+RSP^K21^RSP_K21: Segment Pattern Response
+QBP^Q22^QBP_Q21: Query By Parameter
+RSP^K22^RSP_K22: Segment Pattern Response
+QBP^Q23^QBP_Q21: Query By Parameter
+RSP^K23^RSP_K23: Segment Pattern Response
+QBP^Q24^QBP_Q21: Query By Parameter
+RSP^K24^RSP_K23: Segment Pattern Response
+ADT^A60^ADT_A60: ADT Message
+ADT^A61^ADT_A61: ADT Message
+ADT^A62^ADT_A61: ADT Message
+QBP^Q32^QBP_Q21: Query By Parameter
+RSP^K32^RSP_K32: Segment Pattern Response
+#
+# CH04_Orders.txt
+OMG^O19^OMG_O19: General Clinical Order Message
+ORG^O20^ORG_O20: General Clinical Order Acknowledgment Message
+OML^O21^OML_O21: Laboratory Order Message
+ORL^O22^ORL_O22: General Laboratory Order Acknowledgment Message (Patient
+ORL^O53^ORL_O53: General Laboratory Order Acknowledgment Message (Patient
+OML^O33^OML_O33: Laboratory Order  Multiple Order Per Specimen Message
+ORL^O34^ORL_O34: Laboratory Order Acknowledgment Message  Multiple Order Per
+ORL^O54^ORL_O54: Laboratory Order Acknowledgment Message  Multiple Order Per
+OML^O35^OML_O35: Laboratory Order  Multiple Order Per Container of Specimen
+ORL^O36^ORL_O36: Laboratory Order Acknowledgment Message  Multiple Order Per
+ORL^O55^ORL_O55: Laboratory Order Acknowledgment Message  Multiple Order Per
+OML^O39^OML_O39: Specimen Shipment Centric Laboratory Order Message
+ORL^O40^ORL_O40: Specimen Shipment Centric Laboratory Order Acknowledgment
+ORL^O56^ORL_O56: Specimen Shipment Centric Laboratory Order Acknowledgment
+OMI^O23^OMI_O23: Imaging Order Message
+ORI^O24^ORI_O24: Imaging Order Acknowledgment Message
+OPL^O37^OPL_O37: Population/Location-Based Laboratory Order Message
+OPR^O38^OPR_O38: Population/Location-Based Laboratory Order Acknowledgment
+OSU^O51^OSU_O51: Order Status Update Message
+OSU^O52^OSU_O52: Order Status Update Acknowledgement Message
+OMQ^O57^OMQ_O57: General Order Message with Document Payload
+ORX^O58^ORX_O58: General Order Message with Document Payload Acknowledgement
+OML^O59^OML_O59: Laboratory Order Message
+QBP^Z73^QBP_Z73: QBP Message
+RTB^Z74^RTB_Z74: Personnel Information Message
+OMD^O03^OMD_O03: Dietary Order
+ORD^O04^ORD_O04: Dietary Order Acknowledgment Message
+OMS^O05^OMS_O05: Stock Requisition Order Message
+ORS^O06^ORS_O06: Stock Order Acknowledgment Message
+OMN^O07^OMN_O07: Nonstock Requisition Order Message
+ORN^O08^ORN_O08: General Order Acknowledgment Message
+OMB^O27^OMB_O27: Blood Product Order Message
+ORB^O28^ORB_O28: Description
+BPS^O29^BPS_O29: Blood Product dispense status Message
+BRP^O30^BRP_O30: Description
+BTS^O31^BTS_O31: Blood Product Transfusion/Disposition Message
+BRT^O32^BRT_O32: Description
+DBC^O41^DBC_O41: Create Donor Record Message
+DBU^O42^DBC_O42: Update Donor Record Message
+QBP^Q33^QBP_O33: Get Donor Record Candidates Message
+RSP^K33^RSP_O33: Get Donor Record Candidates Response Message
+QBP^Q34^QBP_O34: Get Donor Record Message
+RSP^K34^RSP_O34: Segment Pattern Response Message
+DRG^O43^DRG_O43: Donor Registration Message
+DER^O44^DER_O44: Donor Registration - Minimal Message
+DEO^O45^DEO_O45: Donor Eligibility Observations Message
+DEL^O46^DEL_O46: Donor Eligibility Message
+DRC^O47^DRC_O47: Donor Request to Collect Message
+DPR^O48^DPR_O48: Donation Procedure Message
+#
+# CH05_Queries.txt
+QBP^Z99^QBP_Q13: Query Grammar: QBP Message
+RSP^Z84^RSP_Z84: Response Grammar: RTB Message
+QBP^Q11^QBP_Q11: Query By Parameter
+RSP^K11^RSP_K11: Segment Pattern Response
+RTB^K13^RTB_K13: Table Based Response
+QBP^Q15^QBP_Q15: Query By Parameter
+RDY^K15^RDY_K15: Display Based Response
+QSB^Q16^QSB_Q16: Create Subscription
+QVR^Q17^QVR_Q17: Query for Previous Events
+QCN^J01^QCN_J01: Cancel Query
+QSX^J02^QCN_J01: Cancel Subscription
+QSB^Z83^QSB_Q16: Query Grammar: QSB Message
+RSP^Z82^RSP_Z82: Response Grammar: Pharmacy Dispense Message
+RSP^Z86^RSP_Z86: Response Grammar: Pharmacy Information Comprehensive
+QBP^Z87^QBP_Q11: Query Grammar: QBS Message
+RSP^Z88^RSP_Z88: Response Grammar: Pharmacy Information Comprehensive
+QBP^Z89^QBP_Q11: Query Grammar: QBS Message
+RSP^Z90^RSP_Z90: Response Grammar: Pharmacy Information Comprehensive
+RTB^Z92^RTB_K13: Response Grammar: Who Am I
+RTB^Z94^RTB_K13: Response Grammar: Who Am I
+RTB^Z96^RTB_K13: Response Grammar: Who Am I
+RDY^Z98^RDY_K15: Response Grammar: Dispense History
+RDY^Z80^RDY_Z80: Response Grammar: Dispense History
+RTB^Z78^RTB_K13: Response Grammar: Who Am I
+RTB^Z76^RTB_K13: Response Grammar: Who Am I
+UDM^Q05^UDM_Q05: Unsolicited Display Message
+#
+# CH06_FinancialMngmt.txt
+BAR^P01^BAR_P01: Add Billing Account
+BAR^P02^BAR_P02: Purge Billing Account
+DFT^P03^DFT_P03: Detail Financial Transaction
+BAR^P05^BAR_P05: Update Billing Account
+BAR^P06^BAR_P06: End Billing Account
+BAR^P10^BAR_P10: Transmit Ambulatory Payment Classification (APC) groups
+DFT^P11^DFT_P11: Detail Financial Transaction - Expanded
+BAR^P12^BAR_P12: Update Diagnosis/Procedures
+#
+# CH07_Observations.txt
+ORU^R01^ORU_R01: Observation Message
+ORU^R30^ORU_R30: Observation Message
+ORU^R31^ORU_R30: Observation Message
+ORU^R32^ORU_R30: Observation Message
+ORA^R33^ORA_R33: Observation Report Acknowledgement
+OUL^R22^OUL_R22: Observation Message
+OUL^R23^OUL_R23: Observation Message
+OUL^R24^OUL_R24: Observation Message
+OPU^R25^OPU_R25: Observation Message
+ORU^R40^ORU_R01: Observation Message
+ORA^R41^ORA_R41: Observation Report Alert Acknowledgement
+ORU^R42^ORU_R01: Observation Message
+ORU^R43^ORU_R01: Observation Message
+OSM^R26^OSM_R26: Specimen Shipment Message
+#
+# CH08_MasterFiles.txt
+MFN^M13^MFN_M13: Master File Notification - General
+MFK^M13^MFK_M01: Master File Application Acknowledgment
+MFK^M14^MFK_M01: Master File Application Acknowledgment
+MFN^M02^MFN_M02: Master File Notification for Staff/Practitioner
+MFK^M02^MFK_M01: Master File Acknowledgment
+MFN^M08^MFN_M08: Master File Notification - Test/Observation (Numeric)
+MFK^M08^MFK_M01: Master File Application Acknowledgment
+MFN^M09^MFN_M09: Master File Notification - Test/Observation (Categorical)
+MFK^M09^MFK_M01: Master File Application Acknowledgment
+MFN^M10^MFN_M10: Master File Notification - Test/Observation Batteries
+MFK^M10^MFK_M01: Master File Application Acknowledgment
+MFN^M11^MFN_M11: Master File Notification - Test/Calculated Observations
+MFK^M11^MFK_M01: Master File Application Acknowledgment
+MFN^M12^MFN_M12: Master File Notification - Additional Basic Observation/
+MFK^M12^MFK_M01: Master File Application
+MFN^M18^MFN_M18: Master File Notification  Test/Observation (Payer)
+MFK^M18^MFK_M01: Master File Application Acknowledgment
+MFN^M05^MFN_M05: Master File Notification - Patient Location
+MFK^M05^MFK_M01: Master File Acknowledgment
+MFN^M04^MFN_M04: Master File Notification  Charge Description
+MFK^M04^MFK_M01: Master File Acknowledgment
+MFN^M06^MFN_M06: Master File Notification  Clinical Study with Phases and
+MFK^M06^MFK_M01: Master File Acknowledgment
+MFN^M07^MFN_M07: Master File Notification  Clinical Study without Phases but
+MFK^M07^MFK_M01: Master File Acknowledgment
+MFN^M15^MFN_M15: Master File Notification  Inventory Item
+MFK^M15^MFK_M01: Master File Acknowledgment
+MFN^M16^MFN_M16: Master File Notification  Inventory Item Enhanced
+MFK^M16^MFK_M01: Master File Acknowledgment
+MFN^M17^MFN_M17: Master File Notification - DRG
+MFK^M17^MFK_M01: Master File Acknowledgment
+MFN^M19^MFN_M19: Master File Supply Item Contract
+MFK^M19^MFK_M01: Master File Acknowledgment
+#
+# CH09_MedRecords.txt
+MDM^T01^MDM_T01: Original Document Notification
+MDM^T02^MDM_T02: Original Document Notification & Content
+MDM^T03^MDM_T01: Document Status Change Notification
+MDM^T04^MDM_T02: Document Status Change Notification & Content
+MDM^T05^MDM_T01: Document Addendum Notification
+MDM^T06^MDM_T02: Document Addendum Notification & Content
+MDM^T07^MDM_T01: Document Edit Notification
+MDM^T08^MDM_T02: Document Edit Notification & Content
+MDM^T09^MDM_T01: Document Replacement Notification
+MDM^T10^MDM_T02: Document Replacement Notification & Content
+MDM^T11^MDM_T01: Document Cancel Notification
+#
+# CH10_Scheduling.txt
+# SRM^S01-S11^SRM_S01: Schedule Request Message
+# SRR^S01-S11^SRR_S01: Scheduled Request Response
+# SIU^S12-S24,S26,S27^SIU_S12: Schedule Information Unsolicited
+# ACK^S12-S24,S26,S27^ACK: General Acknowledgment
+#
+SRM^S01^SRM_S01: Schedule Request Message
+SRM^S02^SRM_S01: Schedule Request Message
+SRM^S03^SRM_S01: Schedule Request Message
+SRM^S04^SRM_S01: Schedule Request Message
+SRM^S05^SRM_S01: Schedule Request Message
+SRM^S06^SRM_S01: Schedule Request Message
+SRM^S07^SRM_S01: Schedule Request Message
+SRM^S08^SRM_S01: Schedule Request Message
+SRM^S09^SRM_S01: Schedule Request Message
+SRM^S10^SRM_S01: Schedule Request Message
+SRM^S11^SRM_S01: Schedule Request Message
+SRR^S01^SRR_S01: Scheduled Request Response
+SRR^S02^SRR_S01: Scheduled Request Response
+SRR^S03^SRR_S01: Scheduled Request Response
+SRR^S04^SRR_S01: Scheduled Request Response
+SRR^S05^SRR_S01: Scheduled Request Response
+SRR^S06^SRR_S01: Scheduled Request Response
+SRR^S07^SRR_S01: Scheduled Request Response
+SRR^S08^SRR_S01: Scheduled Request Response
+SRR^S09^SRR_S01: Scheduled Request Response
+SRR^S10^SRR_S01: Scheduled Request Response
+SRR^S11^SRR_S01: Scheduled Request Response
+SIU^S12^SIU_S12: Schedule Information Unsolicited
+SIU^S13^SIU_S12: Schedule Information Unsolicited
+SIU^S14^SIU_S12: Schedule Information Unsolicited
+SIU^S15^SIU_S12: Schedule Information Unsolicited
+SIU^S16^SIU_S12: Schedule Information Unsolicited
+SIU^S17^SIU_S12: Schedule Information Unsolicited
+SIU^S18^SIU_S12: Schedule Information Unsolicited
+SIU^S19^SIU_S12: Schedule Information Unsolicited
+SIU^S20^SIU_S12: Schedule Information Unsolicited
+SIU^S21^SIU_S12: Schedule Information Unsolicited
+SIU^S22^SIU_S12: Schedule Information Unsolicited
+SIU^S23^SIU_S12: Schedule Information Unsolicited
+SIU^S24^SIU_S12: Schedule Information Unsolicited
+SIU^S26^SIU_S12: Schedule Information Unsolicited
+SIU^S27^SIU_S12: Schedule Information Unsolicited
+#
+# CH10_Scheduling.txt
+RQI^I01^RQI_I01: Request Patient Information
+RPI^I01^RPI_I01: Return Patient Information
+RQI^I02^RQI_I01: Request Patient Information
+RPL^I02^RPL_I02: Return Patient Display List
+RQI^I03^RQI_I01: Request Patient Information
+RPR^I03^RPR_I03: Return Patient List
+RQP^I04^RQP_I04: Request Patient Demographics
+RPI^I04^RPI_I04: Return Patient Information
+PIN^I07^RQI_I01: Patient Insurance Information
+CCM^I21^CCM_I21: Collaborative Care Message
+CCU^I20^CCU_I20: Collaborative Care Referral
+CCQ^I19^CCQ_I19: Collaborative Care Referral
+CQU^I19^CQU_I19: Collaborative Care Referral
+CCF^I22^CCF_I22: Collaborative Care Fetch
+CCI^I22^CCI_I22: Collaborative Care
+#
+# CH12_PatientCare.txt
+# PGL^PC6-PC8^PGL_PC6: Patient Goal Message
+# ACK^PC6-PC8^ACK: General Acknowledgment
+# PPR^PC1-PC3^PPR_PC1: Patient Problem Message
+# ACK^PC1-PC3^ACK: General Acknowledgment
+# PPP^PCB-PCD^PPP_PCB: Patient Pathway Problem-Oriented Message
+# ACK^PCB-PCD^ACK: General Acknowledgment
+# PPG^PCG,PCH,PCJ^PPG_PCG: Patient Pathway Goal-Oriented Message
+# ACK^PCG,PCH,PCJ^ACK: General Acknowledgment
+#
+PGL^PC6^PGL_PC6
+PGL^PC7^PGL_PC6
+PGL^PC8^PGL_PC6
+PPR^PC1^PPR_PC1
+PPR^PC2^PPR_PC1
+PPR^PC3^PPR_PC1
+PPP^PCB^PPP_PCB
+PPP^PCD^PPP_PCB
+PPG^PCG^PPG_PCG
+PPG^PCH^PPG_PCG
+PPG^PCJ^PPG_PCG
+#
+# CH13_ClinicalLabAuto.txt
+ESU^U01^ESU_U01: Equipment Status Message
+ESR^U02^ESR_U02: Equipment Status Message
+SSU^U03^SSU_U03: Specimen Status Message
+SSR^U04^SSR_U04: Specimen Status Message
+INU^U05^INU_U05: Inventory Update Message
+INR^U06^INR_U06: Inventory Request Message
+EAC^U07^EAC_U07: Equipment Command Message
+EAR^U08^EAR_U08: Equipment Command Message
+EAN^U09^EAN_U09: Equipment Status Message
+TCU^U10^TCU_U10: Test Code Settings Update
+TCR^U11^TCU_U10: Test Code Settings Request
+LSU^U12^LSU_U12: Equipment Log/Service Message
+LSR^U13^LSU_U12: Equipment Log/Service Message
+INR^U14^INR_U14: Inventory Request Message
+#
+# CH14_AppMngmt.txt
+NMD^N02^NMD_N02: Application Management Data
+#
+# CH15_PersMngmt.txt
+PMU^B01^PMU_B01: Personnel Record Message
+PMU^B02^PMU_B01: Personnel Record Message
+PMU^B03^PMU_B03: Delete Personnel Record Message
+PMU^B04^PMU_B04: Activate Practicing Person Message
+PMU^B05^PMU_B04: Deactivate Practicing Person Message
+PMU^B06^PMU_B04: Terminate Practicing Person Message
+QBP^Q25^QBP_Q21: Query Personnel Information Message
+RSP^K25^RSP_K25: Personnel Information Response Message
+PMU^B07^PMU_B07: Grant Certificate Message
+PMU^B08^PMU_B08: Revoke Certificate Message
+#
+# CH16_eClaims.txt
+EHC^E01^EHC_E01: Submit HealthCare Services Invoice
+EHC^E02^EHC_E02: Cancel HealthCare Services Invoice
+QBP^E03^QBP_E03: Query HealthCare Services Invoice
+RSP^E03^RSP_E03: HealthCare Services Invoice Query Response
+EHC^E04^EHC_E04: Re-Assess HealthCare Services Invoice Request
+EHC^E10^EHC_E10: Edit/Adjudication Results
+EHC^E12^EHC_E12: Request Additional Information
+EHC^E13^EHC_E13: Additional Information Response
+EHC^E15^EHC_E15: Payment/Remittance Advice
+EHC^E20^EHC_E20: Submit Authorization Request
+EHC^E21^EHC_E21: Cancel Authorization Request
+QBP^E22^QBP_E22: Query Authorization Request
+RSP^E22^RSP_E22: Authorization Request Query Response
+EHC^E24^EHC_E24: Authorization Response
+#
+# CH17_MaterialsMngmt.txt
+SLR^S28^SLR_S28: Request New Sterilization
+SLS^S28^SLR_S28: Request New Sterilization
+SLR^S29^SLR_S28: Request Sterilization Lot Deletion
+SLS^S29^SLR_S28: Request New Sterilization
+STI^S30^SLR_S28: Sterilization Item Request
+STS^S30^SLR_S28: Sterilization Item Request
+SDR^S31^SDR_S31: Anti-Microbial Device Data Request
+SDS^S31^SDR_S31: Anti-Microbial Device Data Request
+SMD^S32^SDR_S32: Anti-Microbial Device Cycle Data Request
+SMS^S32^SDR_S32: Anti-Microbial Device Cycle Data Request
+STC^S33^STC_S33: Sterilization Configuration Notification
+SLN^S34^SLR_S28: Notification of New Sterilization Lot
+SLN^S35^SLR_S28: Notification of Sterilization Lot Deletion
+SDN^S36^SDR_S31: Anti-Microbial Device Data Notification
+SCN^S37^SDR_S32: Anti-Microbial Device Cycle Data Notification

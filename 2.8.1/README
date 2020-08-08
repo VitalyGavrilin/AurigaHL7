@@ -1,0 +1,30 @@
+#
+# hacca - C Toolkit for the HL7 v2.x Protocols
+#
+# R. Carbone (rocco@tecsiel.it)
+# Jun 2020
+#
+# SPDX-License-Identifier: BSD-2-Clause-FreeBSD
+#
+
+This directory contains Auriga HL7-based header files which were automatically generated in order to add
+to Auriga HL7 C++ Library the implementation of the structures for the 2.8.1 version of the HL7 Protocol.
+
+With more details I decided to extend Auriga HL7 C++ Library with header files
+implementing HL7 structures of the version 2.8.1 of the protocol (April 2014)
+because the version 2.4 distributed with Auriga HL7 is a bit outdated (October 2000).
+
+All the files attempt to strictly follow the syntax and conventions originally
+defined by Auriga HL7 C++ Library as form of continuity, convenience and respect
+for their superb work.
+
+The source code of this extension has the following structure:
+    |-- 2.8.1
+        |-- datatype   (all basic and composite datatypes defined in the Protocol)
+        |-- hello      (unit-test programs automatically generated/compiled/run foreach HL7 data item)
+        |-- message    (all messages defined in the Protocol)
+        `-- segment    (all segments defined in the Protocol)
+
+Happy HL7ing!
+
+/rocco
